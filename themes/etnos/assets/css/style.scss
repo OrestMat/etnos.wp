@@ -1,0 +1,89 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+--------------------------------------------------------------*/
+/* CSS Document */
+/*------------------------------------------------------------------
+/*--------------------------------------------------------*/
+/* TABLE OF CONTENTS: */
+/*--------------------------------------------------------*/
+/* STYLES INIT */
+/* PRELOADER */
+/* MENU */
+/* FOOTER */
+/* BLOG LIST */
+/* BLOG SINGLE */
+/* BLOG SIDEBAR */
+/*------------------------------------------------------------------
+/*--------------------------------------------------------*/
+
+/*------------------------------------------------------*/
+/*---------------------- STYLES INIT----------------------*/
+
+@import 'mixin';
+@import 'header';
+@import 'footer';
+
+@import './blocks/header-mega-menu';
+
+
+.etnos-main-wrapper {
+	padding-top: 125px;
+
+	&.etnos-notification-active {
+		padding-top: 225px;
+	}
+}
+
+span.body-overlay {
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.35s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	pointer-events: none;
+	z-index: 9990;
+}
+
+@include md-size-max {
+	.sidebar-open {
+		position: relative;
+
+		span.body-overlay {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.etnos-preloader {
+	background-color: var(--c-light);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	display: none;
+}
+
+
+// elementor stile
+
+.size {
+	@media (max-width: 575px) {
+		a {
+			width: 100%;
+
+			img {
+				height: auto !important;
+				object-fit: contain;
+			}
+		}
+	}
+}

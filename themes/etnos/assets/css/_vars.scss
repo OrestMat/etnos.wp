@@ -1,0 +1,33 @@
+$pr: var(--e-global-color-primary); // #18455B
+$sec: var(--e-global-color-secondary); // #2769EF
+$grey: var(--e-global-color-text); // #515151
+
+$acc: var(--e-global-color-accent); // #F5F5F5
+$orange: var(--e-global-color-31c33f9); // #EF8200
+$dark: var(--e-global-color-c75e4e6); // #222222
+
+$light: var(--e-global-color-d5daea7); // #ffffff
+$light-gray: var(--e-global-color-2817fd4); // ##CBCBCB
+$sky: var(--e-global-color-11d843b); // #7FC4FD
+
+
+
+$trans: 'all .3s ease';
+
+
+:root {
+	--c-primary: var(--e-global-color-primary);
+	--c-secondary: var(--e-global-color-secondary);
+	--c-grey: var(--e-global-color-text);
+
+	--c-accent: var(--e-global-color-accent);
+	--c-orange: var(--e-global-color-31c33f9);
+	--c-dark: var(--e-global-color-c75e4e6);
+
+	--c-light: var(--e-global-color-d5daea7);
+	--c-light-gray: var(--e-global-color-2817fd4);
+	--c-blue-sky: var(--e-global-color-11d843b);
+
+	--font-size: 16px;
+	--font-family: "Open Sans", sans-serif;
+}

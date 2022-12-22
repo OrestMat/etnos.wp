@@ -1,0 +1,341 @@
+@import 'vars';
+
+.etnos-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+
+  .etnos-header__mega-menu {
+    display: none;
+    background-color: #fff;
+    position: fixed;
+    inset: 0;
+    max-height: 100vh;
+    padding: 0 30px 0 15px;
+
+    @include md-size-max {
+      padding-right: 0;
+    }
+  }
+
+  &.open-menu {
+    bottom: 0;
+    max-height: 100vh;
+    padding-right: 15px;
+
+    .etnos-header__main-hamburger {
+      span {
+        display: none;
+
+        &:last-child {
+          display: flex;
+        }
+      }
+    }
+
+    .etnos-header__mega-menu {
+      display: block;
+      padding-top: 106px;
+    }
+  }
+
+  &__notification {
+    z-index: 2;
+    margin: 10px 0;
+
+    & &-wrap {
+      display: flex;
+      align-items: center;
+      padding: 14px 20px;
+      gap: 15px;
+      background-color: $sky;
+      color: $pr;
+
+      h4,
+      h3 {
+        margin: 0;
+      }
+
+      i {
+        flex: 0 0 30px;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      button {
+        padding: 8px 20px;
+        align-self: flex-start;
+        font-size: 24px;
+        cursor: pointer;
+        border: none;
+        transform: translate(20px, -14px);
+        background-color: transparent;
+
+        &:hover {
+          color: var(--e-global-color-c75e4e6);
+          background: transparent;
+        }
+      }
+
+      a {
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: underline;
+      }
+    }
+
+    &-des {
+      flex: 1;
+    }
+  }
+
+  ul {
+    margin: 0;
+
+    li {
+      margin: 0;
+      list-style: none;
+    }
+  }
+
+  &__wrap {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  &__top {
+    z-index: 2;
+
+    &-wrap {
+      display: flex;
+      align-items: center;
+      height: 42px;
+      background-color: #fff;
+
+      @include md-size-max {
+        gap: 20px;
+      }
+    }
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 700;
+    color: $pr;
+  }
+
+  a {
+    font-size: 14px;
+    font-weight: 700;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__notify {
+    flex: 1;
+
+    @include md-size-max {
+      flex: none;
+    }
+  }
+
+  &__login {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    i {
+      margin-right: 5px;
+      color: $orange;
+
+      @include md-size-max {
+        display: none;
+      }
+    }
+  }
+
+  &__dropdown {
+    position: relative;
+
+    @include md-size-max {
+      display: none;
+    }
+
+    &.active {
+      .etnos-header__dropdown-wrap {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        right: 0;
+        transition: opacity 400ms ease-out, right 300ms;
+      }
+
+      i {
+        transform: scale(-1);
+      }
+    }
+
+    &>span {
+      padding-left: 15px;
+      margin-left: 15px;
+      border-left: 1px solid $orange;
+      cursor: pointer;
+      line-height: 20px;
+    }
+
+    &-wrap {
+      // display: none;
+      position: absolute;
+      right: -50px;
+      top: calc(100% + 5px);
+      width: 350px;
+      background-color: #fff;
+      box-shadow: 2px 2px 5px rgb(100 100 100 / 15%);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 200ms ease-out, right 100ms;
+
+
+      a {
+        padding: 15px 30px;
+        display: block;
+
+        &:hover {
+          background-color: #F1F9FF;
+          text-decoration: underline;
+          outline: none;
+        }
+      }
+    }
+
+    i {
+      margin-left: 5px;
+      color: $pr;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  &__main {
+    z-index: 1;
+
+    @include md-size-max {
+      background-color: $acc;
+    }
+
+    &-wrap {
+      background-color: $acc;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      height: 64px;
+
+      @include sm-size-max {
+        gap: 20px;
+      }
+    }
+
+    &-logo {
+      flex-shrink: 0;
+      height: 64px;
+    }
+
+    &-menu {
+      flex-shrink: 0;
+
+      @include md-size-max {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        a {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    & &-search {
+      position: relative;
+      flex-grow: 1;
+
+      @include md-size-min {
+        max-width: 345px;
+      }
+
+      button {
+        position: absolute;
+        inset: 2px auto 0 0;
+        background-color: transparent;
+        width: 32px;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+        display: grid;
+        place-content: center;
+      }
+
+      input {
+        padding-left: 40px;
+        height: 32px;
+
+      }
+
+      i {
+        color: $pr;
+      }
+    }
+
+    &-hamburger {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 30px;
+
+      @include md-size-max {
+        flex-grow: 0;
+      }
+
+      @include sm-size-max {
+        margin-right: 0px;
+      }
+
+      span {
+        cursor: pointer;
+        text-transform: uppercase;
+        color: $pr;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        display: none;
+
+        @include md-size-max {
+          font-size: 0;
+          gap: 0;
+          width: 22px;
+
+          i {
+            font-size: 26px;
+          }
+        }
+
+        &:first-child {
+          display: flex;
+        }
+
+      }
+    }
+  }
+}

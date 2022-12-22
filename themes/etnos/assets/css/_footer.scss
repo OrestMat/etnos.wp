@@ -1,0 +1,269 @@
+/*-------------------------------------------------*/
+/*------------------ FOOTER -------------------*/
+@import './vars';
+
+.etnos-footer {
+  text-align: center;
+  padding: 40px 0;
+
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+  }
+
+  & &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: $pr;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+
+    @include md-size-max {
+      flex-direction: column;
+    }
+
+    h3 {
+      color: #fff;
+      font-weight: 400;
+    }
+
+    a {
+      color: #fff;
+      font-size: 21px;
+
+      &:hover {
+        filter: brightness(2);
+      }
+    }
+
+    &-header {
+      position: relative;
+      padding: 13px 30px 13px 0;
+
+      @include md-size-max {
+        padding: 0 0 15px;
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -2px;
+        width: 4px;
+        background-color: #ef8200;
+
+        @include md-size-max {
+          width: 50px;
+          height: 4px;
+          inset: auto auto -4px 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    &-social {
+      display: flex;
+      gap: 25px;
+
+    }
+  }
+
+  &__content {
+    &-logo {
+      text-align: left;
+      height: 64px;
+    }
+
+    &-mobile-menu {
+      @include md-size-min {
+        display: none;
+      }
+
+      a {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+
+
+
+    &-wrap {
+      margin: 10px 0 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      text-align: left;
+
+      @include md-size-max {
+        margin: 15px 0 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      &>div {
+        flex: 1;
+        font-size: 12px;
+        line-height: 20px;
+        color: $pr;
+      }
+    }
+
+    & &-about {
+      flex: 0 1 445px;
+
+      @include lg-size-max {
+        flex: 0 1 270px;
+      }
+
+      @include md-size-max {
+        display: none;
+      }
+    }
+
+    & &-websites {
+      flex: 0 1 285px;
+
+      @include xl-size-max {
+        flex: 1;
+      }
+
+      @include lg-size-max {
+        flex: 0 1 150px;
+      }
+
+      @include md-size-max {
+        display: none;
+      }
+
+    }
+
+    h6 {
+      margin-bottom: 5px;
+    }
+  }
+
+
+  &__menu {
+    padding: 30px 0;
+    margin-bottom: 45px;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #CBCBCB;
+
+
+    @include md-size-max {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+
+      @include lg-size-max {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px 30px;
+      }
+
+
+      .menu-item-has-children {
+        &>a {
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 30px;
+
+    @include md-size-max {
+      flex-direction: column-reverse;
+      gap: 15px;
+    }
+
+    &>* {
+      flex: 1;
+      font-size: 12px;
+      line-height: 20px;
+
+      &:first-child {
+        flex: 0 1 445px;
+
+        @include md-size-max {
+          flex: 0 1 100%;
+        }
+      }
+
+      &:last-child {
+        flex: 0 1 285px;
+
+        @include xl-size-max {
+          flex: 1;
+        }
+
+        @include lg-size-max {
+          flex: 0 1 150px;
+        }
+
+        @include md-size-max {
+          flex: 0 1 100%;
+        }
+      }
+
+
+    }
+
+    &-social {
+      display: flex;
+      gap: 15px;
+
+      a {
+        font-size: 18px;
+      }
+    }
+
+    & &-copyright {
+      text-align: left;
+
+      @include lg-size-max {
+        flex: 0 1 270px;
+      }
+
+      @include md-size-max {
+        flex: 1 1 100%;
+      }
+    }
+
+    .menu {
+      display: flex;
+      gap: 10px;
+
+      @include md-size-max {
+        display: none;
+      }
+
+      a {
+        font-size: 1em;
+        color: $sec;
+        text-decoration: underline;
+
+        &:hover {
+          color: $pr;
+        }
+      }
+    }
+  }
+}
