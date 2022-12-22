@@ -9,8 +9,8 @@
 
 <channel>
 	<title>etnos</title>
-	<atom:link href="http://orestmat.github.io/etnos.wp/feed/" rel="self" type="application/rss+xml" />
-	<link>http://orestmat.github.io/etnos.wp/</link>
+	<atom:link href="https://orestmat.github.io/etnos.wp/feed/" rel="self" type="application/rss+xml" />
+	<link>https://orestmat.github.io/etnos.wp/</link>
 	<description></description>
 	<lastBuildDate>Thu, 22 Dec 2022 14:12:13 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,20 +21,20 @@
 	<generator>https://wordpress.org/?v=6.1.1</generator>
 	<item>
 		<title>Hello world!</title>
-		<link>http://orestmat.github.io/etnos.wp/2022/12/22/hello-world/</link>
-					<comments>http://orestmat.github.io/etnos.wp/2022/12/22/hello-world/#comments</comments>
+		<link>https://orestmat.github.io/etnos.wp/2022/12/22/hello-world/</link>
+					<comments>https://orestmat.github.io/etnos.wp/2022/12/22/hello-world/#comments</comments>
 		
 		<dc:creator><![CDATA[petrovich]]></dc:creator>
 		<pubDate>Thu, 22 Dec 2022 14:12:13 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">http://orestmat.github.io/etnos.wp/?p=1</guid>
+		<guid isPermaLink="false">https://orestmat.github.io/etnos.wp/?p=1</guid>
 
 					<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
 										<content:encoded><![CDATA[
 <p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://orestmat.github.io/etnos.wp/2022/12/22/hello-world/feed/</wfw:commentRss>
+					<wfw:commentRss>https://orestmat.github.io/etnos.wp/2022/12/22/hello-world/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		

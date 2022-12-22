@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: Hello world!	</title>
-	<atom:link href="http://orestmat.github.io/etnos.wp/2022/12/22/hello-world/feed/" rel="self" type="application/rss+xml" />
-	<link>http://orestmat.github.io/etnos.wp/2022/12/22/hello-world/</link>
+	<atom:link href="https://orestmat.github.io/etnos.wp/2022/12/22/hello-world/feed/" rel="self" type="application/rss+xml" />
+	<link>https://orestmat.github.io/etnos.wp/2022/12/22/hello-world/</link>
 	<description></description>
 	<lastBuildDate>Thu, 22 Dec 2022 14:12:13 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,11 +20,11 @@
 	<item>
 		<title>
 		By: A WordPress Commenter		</title>
-		<link>http://orestmat.github.io/etnos.wp/2022/12/22/hello-world/#comment-1</link>
+		<link>https://orestmat.github.io/etnos.wp/2022/12/22/hello-world/#comment-1</link>
 
 		<dc:creator><![CDATA[A WordPress Commenter]]></dc:creator>
 		<pubDate>Thu, 22 Dec 2022 14:12:13 +0000</pubDate>
-		<guid isPermaLink="false">http://orestmat.github.io/etnos.wp/?p=1#comment-1</guid>
+		<guid isPermaLink="false">https://orestmat.github.io/etnos.wp/?p=1#comment-1</guid>
 
 					<description><![CDATA[Hi, this is a comment.
 To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
