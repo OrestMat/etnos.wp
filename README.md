@@ -1,5 +1,5 @@
 ## Gulp
-* node --v 19.0.2
+* node -v // 19.2.0
 
 
 ## Simply Static (wp plugin)
