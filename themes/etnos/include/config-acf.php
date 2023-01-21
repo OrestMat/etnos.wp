@@ -76,4 +76,40 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-?>
+if (!function_exists('display_page_blocks')) {
+
+    function display_page_blocks($page_content = array())
+    {
+        if (is_array($page_content) && !empty($page_content)) {
+
+            global $page_block;
+
+            foreach ($page_content as $page_block) {
+                $block_slug = $page_block['acf_fc_layout'];
+				
+                get_template_part("/template-parts/blocks/" . $block_slug);
+            }
+        }
+    }
+}
+
+
+/**
+ * Get link
+ * @param array $link - acf link object
+ * @param string $link_class - class added to link
+ * @return html
+ */
+if (!function_exists('get_acf_link')) {
+
+    function get_acf_link($link = '', $link_class = '')
+    {
+
+        if (empty($link))
+            return;
+
+        (empty($link['target'])) ? $target = '' : $target = 'target="' . $link['target'] . '"';
+        (empty($link_class)) ? $class = '' : $class = 'class="' . $link_class . '"';
+        return '<a href="' . $link['url'] . '" ' . $class . ' ' . $target . '>' . $link['title'] . '</a>';
+    }
+}

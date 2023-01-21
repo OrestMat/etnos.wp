@@ -11,4 +11,12 @@ while (have_posts()) : the_post();
 
 endwhile;
 
+
+echo '<main>';
+	$page_content = get_field( 'page_content' );
+
+	display_page_blocks( $page_content ); 
+echo '</main>';
+
+
 get_footer();
