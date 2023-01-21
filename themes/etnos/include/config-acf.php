@@ -2,9 +2,9 @@
 
 
 // Customize ACF path
-add_filter('acf/settings/path', 'orthalign_acf_settings_path');
+add_filter('acf/settings/path', 'etnos_acf_settings_path');
 
-function orthalign_acf_settings_path( $path ) {
+function etnos_acf_settings_path( $path ) {
 
     // update path
     $path = get_stylesheet_directory() . '/acf/';
@@ -16,9 +16,9 @@ function orthalign_acf_settings_path( $path ) {
 
 
 // Customize ACF dir
-add_filter('acf/settings/dir', 'orthalign_acf_settings_dir');
+add_filter('acf/settings/dir', 'etnos_acf_settings_dir');
 
-function orthalign_acf_settings_dir( $dir ) {
+function etnos_acf_settings_dir( $dir ) {
 
     // update path
     $dir = get_stylesheet_directory_uri() . '/acf/';
@@ -29,9 +29,9 @@ function orthalign_acf_settings_dir( $dir ) {
 }
 
 // Customize JSON save path
-add_filter('acf/settings/save_json', 'orthalign_acf_json_save_point');
+add_filter('acf/settings/save_json', 'etnos_acf_json_save_point');
 
-function orthalign_acf_json_save_point( $path ) {
+function etnos_acf_json_save_point( $path ) {
 
     // update path
     $path = get_stylesheet_directory() . '/acf-json';
@@ -42,9 +42,9 @@ function orthalign_acf_json_save_point( $path ) {
 }
 
 // Customize JSON load path
-add_filter('acf/settings/load_json', 'orthalign_acf_json_load_point');
+add_filter('acf/settings/load_json', 'etnos_acf_json_load_point');
 
-function orthalign_acf_json_load_point( $paths ) {
+function etnos_acf_json_load_point( $paths ) {
 
     // remove original path (optional)
     unset($paths[0]);
@@ -58,23 +58,44 @@ function orthalign_acf_json_load_point( $paths ) {
 }
 
 
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Header Settings',
+        'menu_title'    => 'Header',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Footer Settings',
+        'menu_title'    => 'Footer',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 // Include ACF
 include_once( get_stylesheet_directory() . '/acf/acf.php' );
 
-//Add an Options Page
-if( function_exists('acf_add_options_page') ) {
 
-	acf_add_options_page(array(
-		'page_title' 	=> 'orthalign General Settings',
-		'menu_title'	=> 'orthalign Settings',
-		'menu_slug' 	=> 'orthalign-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
-
-
-
-}
 
 if (!function_exists('display_page_blocks')) {
 
@@ -92,7 +113,6 @@ if (!function_exists('display_page_blocks')) {
         }
     }
 }
-
 
 /**
  * Get link
