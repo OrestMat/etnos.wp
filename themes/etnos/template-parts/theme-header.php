@@ -1,7 +1,7 @@
 <div class="etnos-preloader"></div>
 
 <div class="etnos-main-wrapper">
-  <header class="etnos-header" id="etnos-header">
+  <header class="etnos-header">
     <div class="etnos-header__wrap">
 
       <?php if($аlert_flag && !empty($аlert) && !isset($_COOKIE['notification'])):?>
