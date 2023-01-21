@@ -1,7 +1,6 @@
-
 <div class="etnos-preloader"></div>
 
-<div class="etnos-main-wrapper <?php echo !isset($_COOKIE['notification']) ? 'etnos-notification-active' : '';?>">
+<div class="etnos-main-wrapper">
   <header class="etnos-header" id="etnos-header">
     <div class="etnos-header__wrap">
 
