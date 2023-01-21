@@ -11,8 +11,8 @@ defined( 'ETNOS_T_URI' ) or define( 'ETNOS_T_URI', get_template_directory_uri() 
 defined( 'ETNOS_T_PATH' ) or define( 'ETNOS_T_PATH', get_template_directory() );
 
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
-require_once ETNOS_T_PATH . '/include/actions-config.php';
-require_once ETNOS_T_PATH . '/include/customizer.php';
+require_once ETNOS_T_PATH . '/include/config-actions.php';
+require_once ETNOS_T_PATH . '/include/config-actions.php';
 
 
 if ( ! function_exists( 'etnos_setup' ) ) :

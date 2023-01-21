@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const strip = require("gulp-strip-comments");
 const babel = require("gulp-babel");
-const sourcemaps = require("gulp-sourcemaps");
+// const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass")(require("sass"));
 
 const autoprefixer = require("gulp-autoprefixer");
@@ -15,7 +15,6 @@ const plumber = require("gulp-plumber");
 gulp.task("scripts", function () {
   return gulp
     .src(["./etnos/assets/js/**/*.js", "!./etnos/assets/js/**/*.min.js"])
-    .pipe(sourcemaps.init())
     .pipe(
       babel({
         presets: ["@babel/env"],
@@ -23,7 +22,6 @@ gulp.task("scripts", function () {
     )
     .pipe(uglify())
     .pipe(rename({ suffix: ".min" }))
-    .pipe(sourcemaps.write("."))
     .pipe(strip())
     .pipe(gulp.dest("./etnos/assets/js"));
 });
@@ -31,7 +29,6 @@ gulp.task("scripts", function () {
 gulp.task("sass", function () {
   return gulp
     .src("./etnos/assets/css/**/*.scss")
-    .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(
       sass({
@@ -50,14 +47,12 @@ gulp.task("sass", function () {
       })
     )
     .pipe(cleanCSS({ compatibility: "ie8" }))
-    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./etnos/assets/css"));
 });
 
 gulp.task("sass_widget", function () {
   return gulp
     .src("./etnos/widgets/**/*.scss")
-    .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(
       sass({
@@ -76,7 +71,6 @@ gulp.task("sass_widget", function () {
       })
     )
     .pipe(cleanCSS({ compatibility: "ie8" }))
-    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./etnos/widgets"));
 });
 
