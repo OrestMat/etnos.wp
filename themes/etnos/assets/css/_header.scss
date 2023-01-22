@@ -10,7 +10,7 @@
 
     a {
       color: $white;
-      font-size: .75rem;
+      font-size: 14px;
     }
 
     &-wrap {
@@ -47,8 +47,8 @@
     }
 
     &-logo {
-      max-width: 110px;
-      height: 70px;
+      max-width: 140px;
+      height: 88px;
     }
 
     &-menu {
@@ -61,6 +61,7 @@
           list-style: none;
 
           a {
+            font-size: 18px;
             font-weight: 800;
             text-transform: uppercase;
           }
