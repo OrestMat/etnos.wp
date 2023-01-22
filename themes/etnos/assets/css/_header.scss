@@ -2,7 +2,7 @@
 @import './mixin';
 
 .etnos-header {
-  background: linear-gradient(90deg, rgba(238, 238, 238, 1) 0%, rgba(209, 208, 208, 1) 70%, rgba(209, 208, 208, 1) 100%);
+  background: linear-gradient(90deg, rgba(238, 238, 238, 1) 30%, rgba(209, 208, 208, 1) 100%);
 
   &__top {
     background-color: $dark;
