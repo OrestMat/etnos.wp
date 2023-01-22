@@ -1,10 +1,10 @@
 {
     "key": "group_63cc7683c0cf9",
-    "title": "Page template",
+    "title": "Page Template",
     "fields": [
         {
             "key": "field_63cc76a67e7e1",
-            "label": "Page content",
+            "label": "Page Content",
             "name": "page_content",
             "type": "flexible_content",
             "instructions": "",
@@ -23,10 +23,10 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_63cc76c2b8a3e",
-                            "label": "test",
-                            "name": "test",
-                            "type": "text",
+                            "key": "field_63cdc05442a9b",
+                            "label": "Item",
+                            "name": "item",
+                            "type": "repeater",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -35,11 +35,72 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_63cdc06742a9c",
+                                    "label": "Background",
+                                    "name": "background",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "full",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_63cdc07742a9d",
+                                    "label": "Button Name",
+                                    "name": "button_name",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_63cdc08d42a9e",
+                                    "label": "Button Link",
+                                    "name": "button_link",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -77,5 +138,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1674393510
+    "modified": 1674428890
 }

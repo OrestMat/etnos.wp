@@ -114,6 +114,7 @@ function etnos_enqueue_scripts() {
 	// wp_enqueue_style( 'fonts-awesome', ETNOS_T_URI . '/assets/css/lib/awesome.css' );
 	wp_enqueue_style( 'fonts-futura', ETNOS_T_URI . '/assets/fonts/Futura/stylesheet.css' );
 	wp_enqueue_style( 'etnos-main-style', ETNOS_T_URI . '/assets/css/style.css' );
+	wp_enqueue_style( 'etnos-sections', ETNOS_T_URI . '/assets/css/layout/sections.css' );
 	wp_enqueue_style( 'etnos-style', ETNOS_T_URI . '/style.css' );
 
 	// add TinyMCE style

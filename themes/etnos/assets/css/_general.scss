@@ -161,6 +161,22 @@ button {
 	cursor: pointer;
 }
 
+.btn {
+	height: 50px;
+	letter-spacing: 3px;
+	font-weight: 500;
+	background: linear-gradient(90deg, rgba(34, 34, 34, 1) -10%, rgba(108, 108, 108, 1) 100%);
+	padding: 0 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: $white;
+
+	&:hover {
+		background: linear-gradient(90deg, rgba(34, 34, 34, 1) 100%, rgba(108, 108, 108, 1) 130%);
+	}
+}
+
 a {
 	color: $dark;
 	outline: 0;
@@ -204,6 +220,13 @@ ul ul {
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+.img-cover {
+	object-fit: cover;
+	object-position: center;
+	height: 100%;
+	width: 100%;
 }
 
 audio,

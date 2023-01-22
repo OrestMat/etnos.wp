@@ -1,0 +1,40 @@
+.etnos-banner {
+  background: linear-gradient(90deg, #24292d 0, #24292d 45%, #fff 55%, #fff 100%);
+
+  &__wrap {
+    display: flex;
+
+    &-item {
+      position: relative;
+      flex: 0 1 33.33%;
+      height: 660px;
+
+
+
+      &:first-child {
+        .etnos-banner__wrap-btn {
+          left: 30px;
+        }
+      }
+
+      &:nth-child(2) {
+        .etnos-banner__wrap-btn {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      &:last-child {
+        .etnos-banner__wrap-btn {
+          right: 30px;
+        }
+      }
+
+    }
+
+    &-btn {
+      position: absolute;
+      bottom: 30px;
+    }
+  }
+}
