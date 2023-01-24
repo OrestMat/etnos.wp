@@ -14,7 +14,7 @@ const plumber = require("gulp-plumber");
 
 gulp.task("scripts", function () {
   return gulp
-    .src(["./etnos/assets/js/**/*.js", "!./etnos/assets/js/**/*.min.js"])
+    .src(["./etnos/assets/js/*.js", "!./etnos/assets/js/**/*.min.js"])
     .pipe(
       babel({
         presets: ["@babel/env"],
@@ -83,7 +83,7 @@ gulp.task("watch", function () {
     gulp.series("sass_layout")
   );
   gulp.watch(
-    ["./etnos/assets/js/**/*.js", "!./etnos/assets/js/**/*.min.js"],
+    ["./etnos/assets/js/*.js", "!./etnos/assets/js/*.min.js"],
     gulp.series("scripts")
   );
 });

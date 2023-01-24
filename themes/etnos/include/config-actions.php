@@ -112,6 +112,7 @@ function etnos_enqueue_scripts() {
 	}
 
 	// wp_enqueue_style( 'fonts-awesome', ETNOS_T_URI . '/assets/css/lib/awesome.css' );
+	wp_enqueue_style( 'swiper', ETNOS_T_URI . '/assets/css/lib/swiper-bundle.css' );
 	wp_enqueue_style( 'fonts-futura', ETNOS_T_URI . '/assets/fonts/Futura/stylesheet.css' );
 	wp_enqueue_style( 'etnos-main-style', ETNOS_T_URI . '/assets/css/style.css' );
 	wp_enqueue_style( 'etnos-sections', ETNOS_T_URI . '/assets/css/layout/sections.css' );
@@ -132,10 +133,7 @@ function etnos_enqueue_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-    wp_enqueue_script( 'etnos-navigation', ETNOS_T_URI . '/assets/js/navigation.min.js', array(), '', true );
-    wp_enqueue_script( 'etnos-skip-link-focus-fix', ETNOS_T_URI . '/assets/js/lib/skip-link-focus-fix.js', array(), '', true );
-    wp_enqueue_script( 'fitvids', ETNOS_T_URI . '/assets/js/lib/fitvids.js', array( 'jquery' ), '', true );
-    wp_enqueue_script( 'isotope', ETNOS_T_URI . '/assets/js/lib/isotope.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'swiper', ETNOS_T_URI . '/assets/js/lib/swiper-bundle.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'etnos-script', ETNOS_T_URI . '/assets/js/script.min.js', array( 'jquery' ), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

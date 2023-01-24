@@ -108,10 +108,30 @@
                 },
                 "layout_63cc7766ce836": {
                     "key": "layout_63cc7766ce836",
-                    "name": "test",
-                    "label": "test",
+                    "name": "instagram",
+                    "label": "Slider Instagram",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_63d05d788d459",
+                            "label": "test",
+                            "name": "test",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 }
@@ -138,5 +158,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1674428890
+    "modified": 1674599896
 }
