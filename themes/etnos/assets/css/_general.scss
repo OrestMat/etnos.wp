@@ -129,16 +129,18 @@ h6 {
 
 input {
 	width: 100%;
-	border: 1px solid rgb(81 81 81 / 40%);
+	border: 1px solid $white;
 	border-radius: 0;
 	position: relative;
-	height: 40px;
-	padding: 0 10px;
+	height: 52px;
+	padding: 0 12px;
 	color: $dark;
+	background-color: $white;
+	border-radius: 10px;
+	font-size: 1rem;
 
 	&:focus {
 		outline: none;
-		border-color: rgba(24, 69, 91, 0.7);
 		box-shadow: 0 0 2px rgba(24, 69, 91, 0.3);
 	}
 
@@ -148,6 +150,8 @@ input {
 }
 
 svg {
+	vertical-align: middle;
+
 	path {
 		transition: all 450ms
 	}

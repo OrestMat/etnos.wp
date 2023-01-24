@@ -21,8 +21,6 @@ if ( ! function_exists( 'etnos_setup' ) ) :
 
 		register_nav_menus( array( 'primary-menu' => esc_html__( 'Primary menu', 'etnos' ) ) );
 		register_nav_menus( array( 'footer-main-menu' => esc_html__( 'Footer menu', 'etnos' ) ) );
-		register_nav_menus( array( 'footer-second-menu' => esc_html__( 'Footer second menu', 'etnos' ) ) );
-		register_nav_menus( array( 'footer-mobile-menu' => esc_html__( 'Footer mobile menu', 'etnos' ) ) );
 		
 		load_theme_textdomain( 'etnos', get_template_directory() . '/languages' );
 
