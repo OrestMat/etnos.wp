@@ -19,8 +19,8 @@
         enabled: true,
       },
       navigation: {
-        nextEl: $(".swiper-button-prev")[i],
-        prevEl: $(".swiper-button-next")[i],
+        nextEl: $(".swiper-button-next")[i],
+        prevEl: $(".swiper-button-prev")[i],
       },
     });
   });
