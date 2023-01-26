@@ -3,7 +3,6 @@
 
   new Swiper(".etnos-slider-inst .swiper", {
     slidesPerView: 3,
-
     spaceBetween: 30,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -11,7 +10,7 @@
     },
   });
 
-  new Swiper(".etnos-slider-products .swiper", {
+  new Swiper(" .swiper", {
     slidesPerView: 5,
     spaceBetween: 15,
     loop: true,
@@ -20,7 +19,7 @@
     },
     navigation: {
       nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      prevEl: "  .swiper-button-prev",
     },
   });
 })(jQuery, window, document);

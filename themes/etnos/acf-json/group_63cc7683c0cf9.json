@@ -296,6 +296,13 @@
                 "operator": "==",
                 "value": "20"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
         ]
     ],
     "menu_order": 0,
@@ -306,5 +313,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1674693819
+    "modified": 1674693926
 }
