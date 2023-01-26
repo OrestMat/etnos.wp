@@ -17,8 +17,8 @@ $random_id = 'etnos-slider-products__'. $random_number;
         <?php echo get_acf_link($page_block['button_link'], 'btn'); ?>
       </div>
 
-      <div class="etnos-slider-products__slider">
-        <div class="swiper" id="<?php echo $random_id; ?>">
+      <div class="etnos-slider-products__slider" id="<?php echo $random_id; ?>">
+        <div class="swiper">
           <div class="swiper-wrapper">
 
             <?php foreach($page_block['products'] as $item) {?>
@@ -48,7 +48,7 @@ $random_id = 'etnos-slider-products__'. $random_number;
 <script defer>
 (function($, window, document, undefined) {
 
-  new Swiper("<?php echo '#'. $random_id; ?>", {
+  new Swiper("<?php echo '#'. $random_id; ?> .swiper", {
     slidesPerView: 5,
     spaceBetween: 15,
     loop: true,
@@ -56,8 +56,8 @@ $random_id = 'etnos-slider-products__'. $random_number;
       enabled: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: "  .swiper-button-prev",
+      nextEl: "<?php echo '#'. $random_id; ?> .swiper-button-next",
+      prevEl: "<?php echo '#'. $random_id; ?> .swiper-button-prev",
     },
   });
 
