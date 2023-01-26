@@ -5,8 +5,6 @@ global $page_block;
 $flag_red = $page_block['red-template'] ? 'etnos-red' : '';
 
 
-$random_number =  rand(5, 15);
-$random_id = 'etnos-slider-products__'. $random_number;
 ?>
 
 <section class="etnos-slider-products container-out <?php echo $flag_red; ?>">
@@ -17,7 +15,7 @@ $random_id = 'etnos-slider-products__'. $random_number;
         <?php echo get_acf_link($page_block['button_link'], 'btn'); ?>
       </div>
 
-      <div class="etnos-slider-products__slider" id="<?php echo $random_id; ?>">
+      <div class="etnos-slider-products__slider">
         <div class="swiper">
           <div class="swiper-wrapper">
 
@@ -43,23 +41,3 @@ $random_id = 'etnos-slider-products__'. $random_number;
     </div>
   </div>
 </section>
-
-
-<script defer>
-(function($, window, document, undefined) {
-
-  new Swiper("<?php echo '#'. $random_id; ?> .swiper", {
-    slidesPerView: 5,
-    spaceBetween: 15,
-    loop: true,
-    keyboard: {
-      enabled: true,
-    },
-    navigation: {
-      nextEl: "<?php echo '#'. $random_id; ?> .swiper-button-next",
-      prevEl: "<?php echo '#'. $random_id; ?> .swiper-button-prev",
-    },
-  });
-
-})(jQuery, window, document);
-</script>

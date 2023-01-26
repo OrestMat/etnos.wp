@@ -10,16 +10,18 @@
     },
   });
 
-  new Swiper(" .swiper", {
-    slidesPerView: 5,
-    spaceBetween: 15,
-    loop: true,
-    keyboard: {
-      enabled: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: "  .swiper-button-prev",
-    },
+  $(".swiper").each(function (i) {
+    new Swiper($(".swiper")[i], {
+      slidesPerView: 5,
+      spaceBetween: 15,
+      loop: true,
+      keyboard: {
+        enabled: true,
+      },
+      navigation: {
+        nextEl: $(".swiper-button-prev")[i],
+        prevEl: $(".swiper-button-next")[i],
+      },
+    });
   });
 })(jQuery, window, document);
