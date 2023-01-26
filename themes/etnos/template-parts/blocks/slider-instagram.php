@@ -6,7 +6,7 @@ global $page_block;
 
 <h1><?php echo $page_block['test']?></h1>
 
-<section class="etnos-slider-inst">
+<section class="etnos-slider-inst ">
   <div class="container">
 
     <div class="swiper">
