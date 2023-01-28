@@ -107,6 +107,7 @@ if (!function_exists('display_page_blocks')) {
                 $file_path_js = "/page-layouts/" . $block_slug . "/assets/js/" . $block_slug  . ".js";
 
                 echo get_template_directory() . $file_path_css;
+                echo '<pre>';
                 echo ETNOS_T_URI . $file_path_css;
 
                 // if (file_exists(get_template_directory() . $file_path_css)) {
