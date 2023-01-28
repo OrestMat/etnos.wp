@@ -1,0 +1,65 @@
+@import '../../../../assets/css/vars';
+@import '../../../../assets/css/mixin';
+
+.etnos-info-card {
+	padding: 20px 0;
+	color: $dusty-gray;
+	background: linear-gradient(135deg, #444 0, #000 100%);
+
+	h2 {
+		margin: 0;
+		text-transform: uppercase;
+	}
+
+	h5 {
+		font-weight: 500;
+	}
+
+	&__wrap {
+		display: flex;
+		gap: 30px;
+
+		@include lg-max {
+			gap: 20px;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+
+		@include lg-max {
+			text-align: center;
+		}
+	}
+
+	&__img {
+		flex: 0 0 600px;
+		padding-bottom: 25%;
+		position: relative;
+
+		@include xl-max {
+			flex: 0 0 400px;
+		}
+
+		@include lg-max {
+			flex: 0 0 100%;
+			padding-bottom: 35%;
+		}
+
+		@include md-max {
+			padding-bottom: 45%;
+		}
+
+		img {
+			position: absolute;
+			inset: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+}

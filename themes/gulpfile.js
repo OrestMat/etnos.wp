@@ -48,7 +48,7 @@ gulp.task("sass", function () {
     .pipe(gulp.dest("./etnos/assets/css"));
 });
 
-gulp.task("sass_layout", function () {
+gulp.task("sass_inner", function () {
   return gulp
     .src(["!./etnos/assets/css/**/*.scss", "./etnos/assets/css/layout/*.scss"])
     .pipe(plumber())
@@ -72,15 +72,40 @@ gulp.task("sass_layout", function () {
     .pipe(gulp.dest("./etnos/assets/css/layout"));
 });
 
+gulp.task("sass_layout", function () {
+  return gulp
+    .src(["./etnos/page-layouts/**/*.scss"])
+    .pipe(plumber())
+    .pipe(
+      sass({
+        outputStyle: "expanded",
+        includePaths: ["node_modules"],
+      }).on("error", function (err) {
+        this.emit("end");
+        return notify().write(err);
+      })
+    )
+    .pipe(
+      autoprefixer({
+        browserslistrc: ["last 2 versions, not dead, > 0.2%"],
+        // browserslistrc: ["> 1%', 'last 2 versions"],
+        cascade: true,
+      })
+    )
+    .pipe(cleanCSS({ compatibility: "ie8" }))
+    .pipe(gulp.dest("./etnos//page-layouts/"));
+});
+
 //watcher
 gulp.task("watch", function () {
+  gulp.watch(["./etnos/page-layouts/**/*.scss"], gulp.series("sass_layout"));
   gulp.watch(
     ["./etnos/assets/css/**/*.scss", "!./etnos/assets/css/layout/*.scss"],
     gulp.series("sass")
   );
   gulp.watch(
     ["!./etnos/assets/css/**/*.scss", "./etnos/assets/css/layout/*.scss"],
-    gulp.series("sass_layout")
+    gulp.series("sass_inner")
   );
   gulp.watch(
     ["./etnos/assets/js/*.js", "!./etnos/assets/js/*.min.js"],
