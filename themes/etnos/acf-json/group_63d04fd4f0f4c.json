@@ -1,6 +1,6 @@
 {
     "key": "group_63d04fd4f0f4c",
-    "title": "Header Options",
+    "title": "Footer Options",
     "fields": [
         {
             "key": "field_63d04fda1d767",
@@ -44,5 +44,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1674596347
+    "modified": 1674910567
 }

@@ -282,6 +282,35 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_63d51c3031707": {
+                    "key": "layout_63d51c3031707",
+                    "name": "info-card",
+                    "label": "Info Card",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_63d51c4931708",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -313,5 +342,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1674693926
+    "modified": 1674911102
 }
