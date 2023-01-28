@@ -110,12 +110,9 @@ if (!function_exists('display_page_blocks')) {
                     wp_enqueue_style('etnos-layout-css-' . $block_slug, ETNOS_T_URI . $file_path_css);
                 }
 
-
-
-
-                // if (file_exists(get_template_directory() . $file_path_js)) {
-                //     wp_enqueue_script('etnos-layout-js-' . $block_slug, ETNOS_T_URI . $file_path_js, array('jquery'), '', true);
-                // }
+                if (file_exists(get_template_directory() . $file_path_js)) {
+                    wp_enqueue_script('etnos-layout-js-' . $block_slug, ETNOS_T_URI . $file_path_js, array('jquery'), '', true);
+                }
             }
         }
     }
