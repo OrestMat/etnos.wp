@@ -106,13 +106,13 @@ if (!function_exists('display_page_blocks')) {
 
                 $file_path_css = "/page-layouts/" . $block_slug . "/assets/css/" . $block_slug  . ".css";
                 $file_path_js = "/page-layouts/" . $block_slug . "/assets/js/" . $block_slug  . ".js";
-                wp_enqueue_style('etnos-layout-css-' . $block_slug, ETNOS_T_URI . $file_path_css);
-
-
-
-
                 if (file_exists(get_stylesheet_directory() . $file_path_css)) {
+                    wp_enqueue_style('etnos-layout-css-' . $block_slug, ETNOS_T_URI . $file_path_css);
                 }
+
+
+
+
                 // if (file_exists(get_template_directory() . $file_path_js)) {
                 //     wp_enqueue_script('etnos-layout-js-' . $block_slug, ETNOS_T_URI . $file_path_js, array('jquery'), '', true);
                 // }
