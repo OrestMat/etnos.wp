@@ -93,6 +93,7 @@ include_once(get_stylesheet_directory() . '/acf/acf.php');
  * @return html
  **/
 
+
 if (!function_exists('display_page_blocks')) {
     function display_page_blocks($page_content = array())
     {
@@ -103,9 +104,9 @@ if (!function_exists('display_page_blocks')) {
 
                 get_template_part("/page-layouts/" . $block_slug . "/" . $block_slug);
 
-
                 $file_path_css = "/page-layouts/" . $block_slug . "/assets/css/" . $block_slug  . ".css";
                 $file_path_js = "/page-layouts/" . $block_slug . "/assets/js/" . $block_slug  . ".js";
+
                 if (file_exists(get_stylesheet_directory() . $file_path_css)) {
                     wp_enqueue_style('etnos-layout-css-' . $block_slug, ETNOS_T_URI . $file_path_css);
                 }
@@ -117,6 +118,7 @@ if (!function_exists('display_page_blocks')) {
         }
     }
 }
+
 
 /**
  * Get link
