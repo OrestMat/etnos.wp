@@ -14,7 +14,7 @@ global $page_block;
 			<?php echo $page_block['text']?>
 			</div>
 			<div class="etnos-info-card-sec__btn">
-				<button class="btn">Читати далі</button>
+				<a href="<?php echo $page_block['link_path']?>" class="btn"><?php echo $page_block['link_name']?></a>
 			</div>
 		</div>
 	</div>
