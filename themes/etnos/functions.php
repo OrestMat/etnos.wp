@@ -14,51 +14,52 @@ defined('ETNOS_T_PATH') or define('ETNOS_T_PATH', get_template_directory());
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 require_once ETNOS_T_PATH . '/include/config-acf.php';
 require_once ETNOS_T_PATH . '/include/config-actions.php';
+require_once ETNOS_T_PATH . '/include/woo-config.php';
 
 
 if (!function_exists('etnos_setup')) :
 
-	function etnos_setup()
-	{
+  function etnos_setup()
+  {
 
-		register_nav_menus(array('primary-menu' => esc_html__('Primary menu', 'etnos')));
-		register_nav_menus(array('footer-main-menu' => esc_html__('Footer menu', 'etnos')));
+    register_nav_menus(array('primary-menu' => esc_html__('Primary menu', 'etnos')));
+    register_nav_menus(array('footer-main-menu' => esc_html__('Footer menu', 'etnos')));
 
-		load_theme_textdomain('etnos', get_template_directory() . '/languages');
+    load_theme_textdomain('etnos', get_template_directory() . '/languages');
 
 
-		add_theme_support('automatic-feed-links');
-		add_theme_support('title-tag');
-		add_theme_support('post-thumbnails');
-		add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
-		add_theme_support('post-formats', array(
-			'aside',
-			'gallery',
-			'link',
-			'image',
-			'quote',
-			'status',
-			'video',
-			'audio',
-			'chat'
-		));
+    add_theme_support('automatic-feed-links');
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
+    add_theme_support('post-formats', array(
+      'aside',
+      'gallery',
+      'link',
+      'image',
+      'quote',
+      'status',
+      'video',
+      'audio',
+      'chat'
+    ));
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support('custom-background', apply_filters('etnos_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		)));
+    // Set up the WordPress core custom background feature.
+    add_theme_support('custom-background', apply_filters('etnos_custom_background_args', array(
+      'default-color' => 'ffffff',
+      'default-image' => '',
+    )));
 
-		// Add theme support for selective refresh for widgets.
-		add_theme_support('customize-selective-refresh-widgets');
+    // Add theme support for selective refresh for widgets.
+    add_theme_support('customize-selective-refresh-widgets');
 
-		add_theme_support('custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		));
-	}
+    add_theme_support('custom-logo', array(
+      'height'      => 250,
+      'width'       => 250,
+      'flex-width'  => true,
+      'flex-height' => true,
+    ));
+  }
 endif;
 
 add_action('after_setup_theme', 'etnos_setup');
@@ -68,180 +69,180 @@ remove_action('wp_head', 'rest_output_link_wp_head', 10);
 
 
 if (!class_exists('etnos_top_posts')) {
-	class etnos_top_posts extends WP_Widget
-	{
+  class etnos_top_posts extends WP_Widget
+  {
 
-		function __construct()
-		{
+    function __construct()
+    {
 
-			parent::__construct(
+      parent::__construct(
 
-				'etnos_top_posts',
+        'etnos_top_posts',
 
-				esc_html__('Etnos Popular Posts', 'etnos'),
+        esc_html__('Etnos Popular Posts', 'etnos'),
 
-				array('description' => __('Popular posts.', 'etnos'),)
+        array('description' => __('Popular posts.', 'etnos'),)
 
-			);
-		}
+      );
+    }
 
-		public function widget($args, $instance)
-		{
+    public function widget($args, $instance)
+    {
 
-			$title = apply_filters('widget_title', $instance['title']);
+      $title = apply_filters('widget_title', $instance['title']);
 
-			echo $args['before_widget'];
+      echo $args['before_widget'];
 
-			if (!empty($title)) { ?>
-				<h4 class="widget-title"><?php echo esc_html($title); ?></h4>
-				<?php }
-
-
-			$popular = new WP_Query(array(
-				'posts_per_page' => 4,
-				'meta_key'       => 'post_views_count',
-				'orderby'        => 'meta_value_num',
-				'order'          => 'DESC'
-			));
-
-			$counter = 1;
-
-			if ($popular->have_posts()) : while ($popular->have_posts()) : $popular->the_post();
-					$image_id  = get_post_thumbnail_id(get_the_ID());
-					$top_class = !empty($image_id) ? 'image' : ''; ?>
-					<div class="etnos-widget-popular--item">
-						<div class="etnos-widget-popular--image <?php echo esc_attr($top_class); ?>">
-							<span><?php echo esc_html($counter); ?></span>
-							<?php if ($image_id) {
-								$image     = wp_get_attachment_image_url($image_id, 'thumbnail');
-								$image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
-
-								<img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-							<?php } ?>
-						</div>
-						<div class="etnos-widget-popular--content">
-							<a href="<?php the_permalink(); ?>">
-								<h5><?php the_title(); ?></h5>
-							</a>
-							<div class="etnos-widget-popular--author">
-								<span><b><?php echo esc_html(get_the_author()); ?></b></span>
-								<span><?php echo sprintf(esc_html__('%s ago', 'etnos'), human_time_diff(get_the_time('U'), current_time('timestamp'))); ?></span>
-							</div>
-						</div>
-					</div>
-			<?php
-					$counter++;
-				endwhile;
-			endif;
-			wp_reset_query();
+      if (!empty($title)) { ?>
+        <h4 class="widget-title"><?php echo esc_html($title); ?></h4>
+        <?php }
 
 
-			echo $args['after_widget'];
-		}
+      $popular = new WP_Query(array(
+        'posts_per_page' => 4,
+        'meta_key'       => 'post_views_count',
+        'orderby'        => 'meta_value_num',
+        'order'          => 'DESC'
+      ));
 
-		public function form($instance)
-		{
+      $counter = 1;
 
-			if (isset($instance['title'])) {
-				$title = $instance['title'];
-			} else {
-				$title = esc_html__('Top Picks', 'etnos');
-			} ?>
+      if ($popular->have_posts()) : while ($popular->have_posts()) : $popular->the_post();
+          $image_id  = get_post_thumbnail_id(get_the_ID());
+          $top_class = !empty($image_id) ? 'image' : ''; ?>
+          <div class="etnos-widget-popular--item">
+            <div class="etnos-widget-popular--image <?php echo esc_attr($top_class); ?>">
+              <span><?php echo esc_html($counter); ?></span>
+              <?php if ($image_id) {
+                $image     = wp_get_attachment_image_url($image_id, 'thumbnail');
+                $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>
 
-			<p>
+                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+              <?php } ?>
+            </div>
+            <div class="etnos-widget-popular--content">
+              <a href="<?php the_permalink(); ?>">
+                <h5><?php the_title(); ?></h5>
+              </a>
+              <div class="etnos-widget-popular--author">
+                <span><b><?php echo esc_html(get_the_author()); ?></b></span>
+                <span><?php echo sprintf(esc_html__('%s ago', 'etnos'), human_time_diff(get_the_time('U'), current_time('timestamp'))); ?></span>
+              </div>
+            </div>
+          </div>
+      <?php
+          $counter++;
+        endwhile;
+      endif;
+      wp_reset_query();
 
-				<label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e('Title:', 'etnos'); ?></label>
 
-				<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+      echo $args['after_widget'];
+    }
 
-			</p>
+    public function form($instance)
+    {
+
+      if (isset($instance['title'])) {
+        $title = $instance['title'];
+      } else {
+        $title = esc_html__('Top Picks', 'etnos');
+      } ?>
+
+      <p>
+
+        <label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e('Title:', 'etnos'); ?></label>
+
+        <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+
+      </p>
 
 <?php
 
-		}
+    }
 
-		public function update($new_instance, $old_instance)
-		{
+    public function update($new_instance, $old_instance)
+    {
 
-			$instance = array();
+      $instance = array();
 
-			$instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+      $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
 
-			return $instance;
-		}
-	}
+      return $instance;
+    }
+  }
 }
 
 if (!class_exists('etnos_register_widget')) {
-	function etnos_register_widget()
-	{
-		register_widget('etnos_top_posts');
-	}
+  function etnos_register_widget()
+  {
+    register_widget('etnos_top_posts');
+  }
 
-	add_action('widgets_init', 'etnos_register_widget');
+  add_action('widgets_init', 'etnos_register_widget');
 }
 
 add_image_size('etnos-post-large', 350, 350, true);
 
 if (!function_exists('etnos_reading_time')) {
-	function etnos_reading_time($post_id)
-	{
-		$content = get_post_field('post_content', $post_id);
+  function etnos_reading_time($post_id)
+  {
+    $content = get_post_field('post_content', $post_id);
 
-		$word_count       = str_word_count(strip_tags($content));
-		$readingtime      = ceil($word_count / 200);
-		$totalreadingtime = $readingtime . ' min';
+    $word_count       = str_word_count(strip_tags($content));
+    $readingtime      = ceil($word_count / 200);
+    $totalreadingtime = $readingtime . ' min';
 
-		$countKey = 'post_reading_count';
-		$count    = get_post_meta($post_id, $countKey, true);
-		if ($count == '') {
-			delete_post_meta($post_id, $countKey);
-			add_post_meta($post_id, $countKey, $totalreadingtime);
-		} else {
-			update_post_meta($post_id, $countKey, $totalreadingtime);
-		}
+    $countKey = 'post_reading_count';
+    $count    = get_post_meta($post_id, $countKey, true);
+    if ($count == '') {
+      delete_post_meta($post_id, $countKey);
+      add_post_meta($post_id, $countKey, $totalreadingtime);
+    } else {
+      update_post_meta($post_id, $countKey, $totalreadingtime);
+    }
 
-		return $totalreadingtime;
-	}
+    return $totalreadingtime;
+  }
 }
 
 
 if (!function_exists('etnos_add_rel_preload')) {
-	function etnos_add_rel_preload($html, $handle, $href, $media)
-	{
+  function etnos_add_rel_preload($html, $handle, $href, $media)
+  {
 
-		if (is_admin()) {
-			return $html;
-		}
+    if (is_admin()) {
+      return $html;
+    }
 
-		$html = <<<EOT
+    $html = <<<EOT
 <link rel="preload stylesheet preconnect" as="style" id="$handle" href="$href" type="text/css" media="$media" crossorigin />
 EOT;
 
 
-		return $html;
-	}
+    return $html;
+  }
 }
 
 if (!function_exists('etnos_mime_types')) {
-	function etnos_mime_types($mimes)
-	{
-		$mimes['svg'] = 'image/svg+xml';
-		return $mimes;
-	}
+  function etnos_mime_types($mimes)
+  {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+  }
 
-	add_filter('upload_mimes', 'etnos_mime_types');
+  add_filter('upload_mimes', 'etnos_mime_types');
 }
 
 
 function isLink($data)
 {
-	$el = $data;
+  $el = $data;
 
-	echo $el['is_external'] ? ' target="_blank" ' : ' target="_self" ';
-	echo $el['nofollow'] ? ' rel="nofollow" ' : '';
-	echo $el['url'] ? ' href="' . esc_url($el['url']) . '" ' : '';
-	echo $el['custom_attributes'] ? ' ' . esc_attr($el['custom_attributes']) . ' ' : '';
+  echo $el['is_external'] ? ' target="_blank" ' : ' target="_self" ';
+  echo $el['nofollow'] ? ' rel="nofollow" ' : '';
+  echo $el['url'] ? ' href="' . esc_url($el['url']) . '" ' : '';
+  echo $el['custom_attributes'] ? ' ' . esc_attr($el['custom_attributes']) . ' ' : '';
 }
 
 

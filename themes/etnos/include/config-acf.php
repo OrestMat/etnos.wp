@@ -79,6 +79,7 @@ if (function_exists('acf_add_options_page')) {
         'menu_title'    => 'Footer',
         'parent_slug'   => 'theme-general-settings',
     ));
+
 }
 
 
