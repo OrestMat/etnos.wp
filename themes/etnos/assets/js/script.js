@@ -1,17 +1,18 @@
 (function ($, window, document, undefined) {
-  "use strict";
+  'use strict';
 
-  new Swiper(".etnos-slider-inst .swiper", {
-    slidesPerView: 3,
+  new Swiper('.etnos-slider-inst .swiper-feedbacks', {
+    slidesPerView: 5,
     spaceBetween: 30,
+    // loop: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 
-  $(".swiper").each(function (i) {
-    new Swiper($(".swiper")[i], {
+  $('.swiper').each(function (i) {
+    new Swiper($('.swiper')[i], {
       slidesPerView: 5,
       spaceBetween: 15,
       loop: true,
@@ -19,8 +20,8 @@
         enabled: true,
       },
       navigation: {
-        nextEl: $(".swiper-button-next")[i],
-        prevEl: $(".swiper-button-prev")[i],
+        nextEl: $('.swiper-button-next')[i],
+        prevEl: $('.swiper-button-prev')[i],
       },
     });
   });

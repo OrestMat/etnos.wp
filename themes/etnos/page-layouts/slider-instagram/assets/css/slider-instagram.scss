@@ -1,0 +1,73 @@
+.etnos-slider-inst {
+  background: #d4d4d4;
+  padding: 50px 0;
+  position: relative;
+
+  p {
+    font-size: 14px;
+    color: #6c6c6c;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  h3 {
+    font-size: 28px;
+    color: #6c6c6c;
+    font-weight: 500;
+    padding-bottom: 5px;
+  }
+
+  .items {
+    .images {
+      display: inline-flex;
+      position: relative;
+
+      .avatar {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 135px;
+        height: 135px;
+        img {
+          object-fit: cover;
+          object-position: center;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        height: 46px;
+        width: 46px;
+        padding: 8px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .swiper-button-prev {
+    color: #6c6c6c;
+    transition: 0.4s all ease;
+    &:hover {
+      color: black;
+    }
+  }
+
+  .swiper-button-next {
+    color: #6c6c6c;
+    transition: 0.4s all ease;
+    &:hover {
+      color: black;
+    }
+  }
+
+  .swiper-slide {
+    text-align: center;
+  }
+}

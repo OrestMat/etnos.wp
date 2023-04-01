@@ -4,29 +4,42 @@ global $page_block;
 
 ?>
 
-<h1><?php echo $page_block['test']?></h1>
 
 <section class="etnos-slider-inst ">
   <div class="container">
 
-    <div class="swiper">
+    <div class="swiper  swiper-feebacks">
 
       <div class="swiper-wrapper">
-
-        <div class="swiper-slide"><?php echo $page_block['test']?></div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 3</div>
-
+        <?php foreach ($page_block['post'] as $item) { ?>
+          <div class="swiper-slide">
+            <div class="items">
+              <a href="<?php echo $item['link'] ?>">
+                <div class="images">
+                  <div class="avatar"><?php echo wp_get_attachment_image($item['image']) ?></div>
+                  <div class="icon"><img src="http://etnos.wp.loc/wp-content/uploads/2023/03/rew-icon.png" alt=""></div>
+                </div>
+              </a>
+            </div>
+            <div class="title">
+              <h3><?php echo $item['name'] ?></h3>
+            </div>
+            <div class="content">
+              <p>
+                <?php echo $item['description'] ?>
+              </p>
+            </div>
+          </div>
+        <?php } ?>
       </div>
-
-
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-
     </div>
   </div>
 </section>
+
+<script defer>
+  (function($, window, document, undefined) {
+    "use strict";
+  })(jQuery, window, document);
+</script>
