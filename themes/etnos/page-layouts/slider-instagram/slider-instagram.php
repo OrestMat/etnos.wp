@@ -13,22 +13,18 @@ global $page_block;
       <div class="swiper-wrapper">
         <?php foreach ($page_block['post'] as $item) { ?>
           <div class="swiper-slide">
-            <div class="items">
+            <div class="etnos-slider-inst__items">
               <a href="<?php echo $item['link'] ?>">
-                <div class="images">
-                  <div class="avatar"><?php echo wp_get_attachment_image($item['image']) ?></div>
-                  <div class="icon"><img src="/wp-content/themes/etnos/assets/img/rew-icon.png" alt=""></div>
+                <div class="etnos-slider-inst__img">
+                  <div class="etnos-slider-inst__avatar"><?php echo wp_get_attachment_image($item['image']) ?></div>
+                  <div class="etnos-slider-inst__icon"><img src="/wp-content/themes/etnos/assets/img/rew-icon.png" alt=""></div>
                 </div>
               </a>
             </div>
-            <div class="title">
-              <h3><?php echo $item['name'] ?></h3>
-            </div>
-            <div class="content">
-              <p>
-                <?php echo $item['description'] ?>
-              </p>
-            </div>
+            <h3><?php echo $item['name'] ?></h3>
+            <p>
+              <?php echo $item['description'] ?>
+            </p>
           </div>
         <?php } ?>
       </div>
