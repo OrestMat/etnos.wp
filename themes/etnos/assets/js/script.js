@@ -11,8 +11,8 @@
     },
   });
 
-  $('.swiper').each(function (i) {
-    new Swiper($('.swiper')[i], {
+  $('.etnos-slider-products .swiper').each(function (i) {
+    new Swiper($('.etnos-slider-products .swiper')[i], {
       slidesPerView: 5,
       spaceBetween: 15,
       loop: true,
@@ -24,5 +24,11 @@
         prevEl: $('.swiper-button-prev')[i],
       },
     });
+  });
+
+  new Swiper('.woocommerce-product-gallery__slider', {
+    slidesPerView: 4,
+    spaceBetween: 0,
+    freeMode: true,
   });
 })(jQuery, window, document);
