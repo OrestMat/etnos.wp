@@ -17,7 +17,7 @@ global $page_block;
               <a href="<?php echo $item['link'] ?>">
                 <div class="images">
                   <div class="avatar"><?php echo wp_get_attachment_image($item['image']) ?></div>
-                  <div class="icon"><img src="http://etnos.wp.loc/wp-content/uploads/2023/03/rew-icon.png" alt=""></div>
+                  <div class="icon"><img src="../../assets/img/rew-icon.png" alt=""></div>
                 </div>
               </a>
             </div>
