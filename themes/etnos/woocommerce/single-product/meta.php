@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single Product Meta
  *
@@ -15,26 +16,26 @@
  * @version     3.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+  exit;
 }
 
 global $product;
 ?>
 <div class="product_meta">
 
-	<?php do_action( 'woocommerce_product_meta_start' ); ?>
+  <?php do_action('woocommerce_product_meta_start'); ?>
 
-	<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
+  <?php if (wc_product_sku_enabled() && ($product->get_sku() || $product->is_type('variable'))) : ?>
 
-		<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'uthr' ); ?> <span class="sku"><?php echo esc_attr ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'uthr' ); ?></span></span>
+    <span class="sku_wrapper"><?php esc_html_e('SKU:', 'etnos'); ?> <span class="sku"><?php echo esc_attr($sku = $product->get_sku()) ? $sku : esc_html__('N/A', 'etnos'); ?></span></span>
 
-	<?php endif; ?>
+  <?php endif; ?>
 
-	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:<span>', count( $product->get_category_ids() ), 'uthr' ) . ' ', '</span></span>' ); ?>
+  <?php echo wc_get_product_category_list($product->get_id(), ', ', '<span class="posted_in">' . _n('Category:', 'Categories:<span>', count($product->get_category_ids()), 'etnos') . ' ', '</span></span>'); ?>
 
-	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:<span>', count( $product->get_tag_ids() ), 'uthr' ) . ' ', '</span></span>' ); ?>
+  <?php echo wc_get_product_tag_list($product->get_id(), ', ', '<span class="tagged_as">' . _n('Tag:', 'Tags:<span>', count($product->get_tag_ids()), 'etnos') . ' ', '</span></span>'); ?>
 
-	<?php do_action( 'woocommerce_product_meta_end' ); ?>
+  <?php do_action('woocommerce_product_meta_end'); ?>
 
 </div>
