@@ -37,6 +37,7 @@ $wrapper_classes   = apply_filters(
   )
 );
 ?>
+
 <div class="<?php echo esc_attr(implode(' ', array_map('sanitize_html_class', $wrapper_classes))); ?>" data-columns="<?php echo esc_attr($columns); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
   <figure class="woocommerce-product-gallery__wrapper">
     <?php
@@ -50,6 +51,7 @@ $wrapper_classes   = apply_filters(
     ?>
 
     <div class="woocommerce-product-gallery__image-main">
+
       <?php
       echo apply_filters('woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped 
       ?>

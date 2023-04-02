@@ -34,16 +34,12 @@
       });
     }
 
-    const switchImageOptions = function () {
+    $('.cfvsw-swatches-option, .reset_variations').on('click', function () {
       const mainImage = $('.woocommerce-product-gallery__image-main');
 
       setTimeout(() => {
         $('a', mainImage).attr('data-image', $('a', mainImage).attr('href'));
       }, 10);
-    };
-
-    $('.cfvsw-swatches-option, .reset_variations').on('click', function () {
-      switchImageOptions();
     });
   }
 })(jQuery, window, document);

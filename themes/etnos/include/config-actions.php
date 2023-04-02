@@ -107,7 +107,7 @@ function etnos_enqueue_scripts()
     wp_enqueue_style('etnos-sidebar', ETNOS_T_URI . '/assets/css/blog/sidebar.css');
   }
 
-  // wp_enqueue_style( 'fonts-awesome', ETNOS_T_URI . '/assets/css/lib/awesome.css' );
+
   wp_enqueue_style('swiper', ETNOS_T_URI . '/assets/css/lib/swiper-bundle.css');
   wp_enqueue_style('fonts-futura', ETNOS_T_URI . '/assets/fonts/Futura/stylesheet.css');
   wp_enqueue_style('etnos-main-style', ETNOS_T_URI . '/assets/css/style.css');
@@ -145,6 +145,7 @@ add_action('wp_enqueue_scripts', 'enqueue_woocommerce_styles');
 function enqueue_woocommerce_styles()
 {
   if (class_exists('woocommerce')) {
+    wp_enqueue_script('easyzoom', ETNOS_T_URI . '/assets/js/lib/easyzoom.js', array('jquery'), '', true);
     wp_enqueue_script('product-details-page-script', ETNOS_T_URI . '/assets/js/product-details-page.min.js', array('jquery'), '', true);
     wp_enqueue_style('product-details-page-style', ETNOS_T_URI . '/assets/css/product-details-page/product-details-page.css');
   }
