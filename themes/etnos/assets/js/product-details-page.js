@@ -54,4 +54,26 @@
     spaceBetween: 20,
     freeMode: true,
   });
+
+  const counterQuantity = function () {
+    const btn = $('.dec, .inc');
+
+    btn.click(function () {
+      const th = $(this).text().toString(),
+        input = $('.input-text'),
+        inputVal = Number(input.val());
+
+      if (inputVal <= 1 && th == '-') {
+        return;
+      }
+
+      if (th === '+') {
+        input.val(inputVal + 1);
+      } else if (th === '-') {
+        input.val(inputVal - 1);
+      }
+    });
+  };
+
+  counterQuantity();
 })(jQuery, window, document);
