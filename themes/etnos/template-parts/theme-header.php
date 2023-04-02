@@ -72,7 +72,7 @@ $logo = get_field('logo', 'option');
                             V66.797h19.364l11.418,127.158H33.709z"></path>
               </svg>
 
-              <?php echo '<span class="etnos-header__main-toolbar-cart-count">' . esc_html($woocommerce->cart->get_cart_contents_count()) . '</span>'; ?>
+              <?php echo '<span class="etnos-header__main-toolbar-cart-count">' .  WC()->cart->get_cart_contents_count() . '</span>'; ?>
             </a>
           </div>
         </div>

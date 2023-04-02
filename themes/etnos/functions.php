@@ -247,3 +247,17 @@ function isLink($data)
 
 
 add_image_size('custom-size', 350, 188);
+
+
+
+
+
+// Додати дію AJAX для отримання кількості товарів у корзині
+add_action('wp_ajax_get_cart_count', 'get_cart_count');
+add_action('wp_ajax_nopriv_get_cart_count', 'get_cart_count');
+function get_cart_count()
+{
+  $count = WC()->cart->get_cart_contents_count();
+  echo json_encode(array('count' => $count));
+  wp_die();
+}

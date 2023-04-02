@@ -25,4 +25,25 @@
       },
     });
   });
+
+  $(document).on('click', '.remove', function () {
+    jQuery.ajax({
+      type: 'POST',
+      dataType: 'json',
+      url: woocommerce_params.ajax_url,
+      data: {
+        action: 'get_cart_count',
+      },
+      success: function (response) {
+        jQuery.get('?wc-ajax=get_refreshed_fragments', function (response) {
+          let cartCount = jQuery(response.fragments['span.mini_cart_count']).text().trim();
+
+          $('.etnos-header__main-toolbar-cart-count').text(cartCount);
+        });
+      },
+      error: function (error) {
+        console.log(error);
+      },
+    });
+  });
 })(jQuery, window, document);
