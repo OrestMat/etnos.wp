@@ -1,10 +1,10 @@
 (function ($, window, document, undefined) {
   'use strict';
 
-  new Swiper('.etnos-slider-inst .swiper-feedbacks', {
+  new Swiper('.swiper-feebacks', {
     slidesPerView: 5,
     spaceBetween: 30,
-    // loop: true,
+    loop: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
