@@ -42,4 +42,16 @@
       }, 10);
     });
   }
+
+  new Swiper('.woocommerce-product-gallery__slider', {
+    slidesPerView: 4,
+    spaceBetween: 0,
+    freeMode: true,
+  });
+
+  new Swiper('.related-product-section__wrap', {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    freeMode: true,
+  });
 })(jQuery, window, document);

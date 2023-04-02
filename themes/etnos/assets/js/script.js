@@ -25,10 +25,4 @@
       },
     });
   });
-
-  new Swiper('.woocommerce-product-gallery__slider', {
-    slidesPerView: 4,
-    spaceBetween: 0,
-    freeMode: true,
-  });
 })(jQuery, window, document);

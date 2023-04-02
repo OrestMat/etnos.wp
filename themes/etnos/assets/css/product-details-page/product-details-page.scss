@@ -1,3 +1,6 @@
+@import '../mixin';
+@import '../vars';
+
 .product-details-page {
   margin: 40px 0;
 
@@ -70,5 +73,70 @@
 
 
     }
+  }
+}
+
+
+
+
+
+.related-product-section__wrap {
+  border-top: 3px solid $dark;
+  padding-top: 20px;
+  position: relative;
+
+  .single-product-box {
+    border: 1px solid $dark;
+    padding: 5px;
+    text-align: center;
+
+    h4 {
+      margin: 10px 0;
+      color: $black;
+      font-size: 22px;
+      line-height: 22px;
+      font-weight: 700;
+    }
+
+    .price {
+
+      bdi {
+        color: $black;
+      }
+    }
+  }
+
+  .product-thumb {
+    padding-bottom: 150%;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    img {
+      position: absolute;
+      inset: 0;
+      transition: transform 450ms;
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.swiper-button {
+  &-prev {
+    left: -45px;
+    color: $dark;
+  }
+
+  &-next {
+    right: -45px;
+    color: $dark;
   }
 }
