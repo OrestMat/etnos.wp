@@ -1,0 +1,124 @@
+@import '../mixin';
+@import '../vars';
+
+.etnos-category-page {
+  .woocommerce-products-header {
+    height: 300px;
+
+    a {
+      color: inherit;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: inherit;
+    }
+
+    ul {
+      color: $white;
+      font-weight: 500;
+    }
+
+    div {
+      height: 100%;
+    }
+
+    &__wrap {
+      display: grid;
+      place-content: center;
+
+    }
+  }
+
+  .woocommerce-breadcrumb {
+    margin: 0;
+  }
+
+  .products {
+    margin-bottom: 40px;
+
+    &__toolbar {
+      margin-bottom: 40px;
+      background-color: $bg;
+      padding: 5px 0;
+
+      &>div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+      }
+
+      .woocommerce-result-count,
+      .woocommerce-ordering {
+        float: none;
+        margin: 0;
+      }
+    }
+
+    &__wrap {
+      display: flex;
+      gap: 30px;
+
+      aside {
+        flex: 0 0 240px;
+      }
+
+      .products__main {
+        width: 100%;
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 30px;
+      }
+    }
+  }
+
+
+
+
+  .product {
+    .single-product-box {
+      border: 1px solid $dark;
+      padding: 5px;
+      text-align: center;
+      height: 100%;
+
+      h4 {
+        margin: 10px 0;
+        color: $black;
+        font-size: 22px;
+        line-height: 22px;
+        font-weight: 700;
+      }
+
+      .price {
+        bdi {
+          color: $black;
+        }
+      }
+    }
+
+    .product-thumb {
+      padding-bottom: 150%;
+      position: relative;
+      overflow: hidden;
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+
+      img {
+        position: absolute;
+        inset: 0;
+        transition: transform 450ms;
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+
+}

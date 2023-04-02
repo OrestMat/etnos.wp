@@ -70,6 +70,16 @@ function etnos_widgets_init()
     'before_title'  => '<h4 class="widget-title">',
     'after_title'   => '</h4>',
   ));
+
+  register_sidebar(array(
+    'name'          => esc_html__('Category Page', 'etnos'),
+    'id'            => 'category-page',
+    'description'   => esc_html__('Add widgets here.', 'etnos'),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h4 class="widget-title">',
+    'after_title'   => '</h4>',
+  ));
 }
 
 /**
@@ -148,5 +158,9 @@ function enqueue_woocommerce_styles()
     wp_enqueue_script('easyzoom', ETNOS_T_URI . '/assets/js/lib/easyzoom.js', array('jquery'), '', true);
     wp_enqueue_script('product-details-page-script', ETNOS_T_URI . '/assets/js/product-details-page.min.js', array('jquery'), '', true);
     wp_enqueue_style('product-details-page-style', ETNOS_T_URI . '/assets/css/product-details-page/product-details-page.css');
+  }
+
+  if (is_product_category()) {
+    wp_enqueue_style('category-style', ETNOS_T_URI . '/assets/css/category-page/category-page.css');
   }
 }
