@@ -163,4 +163,9 @@ function enqueue_woocommerce_styles()
   if (is_product_category()) {
     wp_enqueue_style('category-style', ETNOS_T_URI . '/assets/css/category-page/category-page.css');
   }
+
+
+  if (is_checkout() || is_cart()) {
+    wp_enqueue_style('cart-style', ETNOS_T_URI . '/assets/css/cart-page/cart-page.css');
+  }
 }

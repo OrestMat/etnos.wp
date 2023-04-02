@@ -1,0 +1,43 @@
+@import '../mixin';
+@import '../vars';
+
+input {
+  width: 100%;
+  border: 1px solid $bg;
+  border-radius: 0;
+  position: relative;
+  height: 52px;
+  padding: 0 12px;
+  color: #222;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+
+
+.woocommerce-checkout {
+
+  .woocommerce {
+    margin-bottom: 40px;
+
+    &>div {
+      max-width: 1300px;
+      padding: 0 15px;
+      margin: 0 auto;
+
+      &.woocommerce-form-coupon-toggle {
+        max-width: none;
+        padding: 0;
+        background-color: #f7f6f7;
+        margin-bottom: 20px;
+
+        .woocommerce-info {
+          max-width: 1300px;
+          margin: 0 auto;
+          border: none;
+        }
+      }
+    }
+  }
+}
