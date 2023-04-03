@@ -90,7 +90,7 @@
       }
 
       &-cart {
-        position: relative;
+
 
         &-count {
           position: absolute;
@@ -106,6 +106,39 @@
           place-content: center;
           transition: background-color 450ms;
           line-height: 0;
+        }
+
+        &-main {
+          position: relative;
+          width: 20px;
+
+          .widget_shopping_cart_content {
+            position: absolute;
+            background-color: $white;
+            width: 300px;
+            top: 100%;
+            right: 100%;
+            z-index: 1;
+            padding: 15px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+            .etnos-header-mini-cart-item {
+              display: flex;
+            }
+
+            .cart_img {
+              width: 40px;
+            }
+
+            .variation {
+              display: flex;
+              flex-wrap: wrap;
+
+              &>dt {
+                flex: 0 0 50%;
+              }
+            }
+          }
         }
       }
     }
