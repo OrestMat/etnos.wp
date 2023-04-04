@@ -56,7 +56,7 @@ $logo = get_field('logo', 'option');
               </svg>
             </button>
             <div class="etnos-header__main-toolbar-cart-main">
-              <a href="/cart/" class="etnos-header__main-toolbar-cart">
+              <a href="#" class="etnos-header__main-toolbar-cart">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 208.955 208.955" style="enable-background:new 0 0 208.955 208.955;" xml:space="preserve">
                   <path class="icon" fill="#222222" d="M190.85,200.227L178.135,58.626c-0.347-3.867-3.588-6.829-7.47-6.829h-26.221V39.971c0-22.04-17.93-39.971-39.969-39.971
                             C82.437,0,64.509,17.931,64.509,39.971v11.826H38.27c-3.882,0-7.123,2.962-7.47,6.829L18.035,200.784

@@ -46,4 +46,10 @@
       },
     });
   });
+
+  $('.etnos-header__main-toolbar-cart-main').on('click', function (e) {
+    e.preventDefault();
+    const th = $(this);
+    th.toggleClass('active').stop('true');
+  });
 })(jQuery, window, document);

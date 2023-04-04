@@ -112,6 +112,36 @@
           position: relative;
           width: 20px;
 
+          &.active {
+            .widget_shopping_cart_content {
+              animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+          }
+
+          @keyframes slide-top {
+            0% {
+
+              transform: translateY(15px);
+            }
+
+            10% {
+              opacity: 1;
+              visibility: visible;
+            }
+
+            50% {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(-2px);
+            }
+
+            100% {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+            }
+          }
+
           .widget_shopping_cart_content {
             position: absolute;
             background-color: $white;
@@ -121,6 +151,8 @@
             z-index: 1;
             padding: 15px;
             box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            opacity: 0;
+            visibility: hidden;
 
             .etnos-header-mini-cart-item {
               display: flex;
