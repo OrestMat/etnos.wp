@@ -396,7 +396,7 @@
                             },
                             "choices": {
                                 "man": "Чоловічі",
-                                "women": "Жіночі"
+                                "woman": "Жіночі"
                             },
                             "allow_custom": 0,
                             "default_value": [],
@@ -862,5 +862,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1682898337
+    "modified": 1682898390
 }
