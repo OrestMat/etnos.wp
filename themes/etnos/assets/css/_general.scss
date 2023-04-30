@@ -311,6 +311,11 @@ iframe {
 
 .price-box {
   .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
     &>span {
       bdi {
         text-decoration: none;
@@ -322,19 +327,23 @@ iframe {
     &>del {
       opacity: 1 !important;
       color: transparent !important;
+      order: 1;
 
       bdi {
-        color: #ee1b21 !important;
-        margin-right: 5px;
+        color: #000;
+        text-decoration: line-through;
+        font-size: 16px;
         font-weight: 600;
       }
     }
 
     &>ins {
-      color: #000;
-      text-decoration: line-through;
-      font-size: 16px;
+      order: 0;
+      color: #ee1b21 !important;
+      font-size: 18px;
+      margin-right: 5px;
       font-weight: 600;
+      text-decoration: none;
     }
   }
 }
