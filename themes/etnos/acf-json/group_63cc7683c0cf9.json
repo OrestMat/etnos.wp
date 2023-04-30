@@ -778,7 +778,7 @@
                             "key": "field_644efd32f868e",
                             "label": "Text",
                             "name": "text",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -789,9 +789,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
                         },
                         {
                             "key": "field_644efd3cf868f",
@@ -862,5 +862,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1682898253
+    "modified": 1682898337
 }
