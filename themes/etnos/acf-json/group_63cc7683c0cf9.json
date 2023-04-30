@@ -409,15 +409,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_644ef00d289b4": {
-                    "key": "layout_644ef00d289b4",
-                    "name": "advantage",
-                    "label": "Advantage",
-                    "display": "block",
-                    "sub_fields": [],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_644ef036289b5": {
                     "key": "layout_644ef036289b5",
                     "name": "slider-instagram",
@@ -783,5 +774,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1682895630
+    "modified": 1682895959
 }
