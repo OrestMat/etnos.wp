@@ -5,7 +5,7 @@ global $page_block;
 ?>
 
 
-<section class="etnos-slider-inst ">
+<section class="etnos-slider-inst container-out">
   <div class="container">
 
     <div class="swiper  swiper-feebacks">
@@ -21,8 +21,8 @@ global $page_block;
                 </div>
               </a>
             </div>
-            <h3><?php echo $item['name'] ?></h3>
-            <p>
+            <h4><?php echo $item['name'] ?></h4>
+            <p class="p-small">
               <?php echo $item['description'] ?>
             </p>
           </div>

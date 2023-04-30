@@ -1,16 +1,31 @@
+@import "../../../../assets/css/vars";
+@import "../../../../assets/css/mixin";
+
 .etnos-slider-inst {
   background: #d4d4d4;
   padding: 50px 0;
 
-  p {
-    font-size: 14px;
-    color: #6c6c6c;
-    font-weight: 500;
-    line-height: 18px;
+  .container {
+    @include xxl-max {
+      max-width: 1200px;
+    }
+    @include xl-max {
+      max-width: 991px;
+    }
+    @include lg-max {
+      max-width: 767px;
+    }
+    @include md-max {
+      max-width: 567px;
+    }
   }
 
-  h3 {
-    font-size: 28px;
+  p {
+    color: #6c6c6c;
+    font-weight: 500;
+  }
+
+  h4 {
     color: #6c6c6c;
     font-weight: 500;
     margin-bottom: 5px;
@@ -52,6 +67,7 @@
   .swiper-button-prev {
     color: #6c6c6c;
     transition: 0.4s all ease;
+    left: 0;
     &:hover {
       color: black;
     }
@@ -59,9 +75,17 @@
 
   .swiper-button-next {
     color: #6c6c6c;
+    right: 0;
     transition: 0.4s all ease;
     &:hover {
       color: black;
+    }
+  }
+
+  @include xl-max {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
     }
   }
 
