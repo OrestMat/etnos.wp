@@ -83,24 +83,7 @@ if (is_single()) {
       <div class="price-box">
         <?php woocommerce_template_loop_price(); ?>
       </div>
-      <div class="pro-button">
-        <?php woocommerce_template_loop_add_to_cart(); ?>
-      </div>
     </div>
-
-    <!-- <div class="product_list_content">
-      <h4 class="product_name"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
-      <div class="price_box">
-        <?php woocommerce_template_loop_price(); ?>
-      </div>
-      <div class="product_desc">
-        <p><?php woocommerce_template_single_excerpt(); ?></p>
-      </div>
-      <div class="add-to-cart">
-        <?php woocommerce_template_loop_add_to_cart(); ?>
-
-      </div>
-    </div> -->
   </div>
 
 

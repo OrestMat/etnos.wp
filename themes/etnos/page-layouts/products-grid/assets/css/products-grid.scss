@@ -1,0 +1,54 @@
+@import '../../../../assets/css/vars';
+@import '../../../../assets/css/mixin';
+
+.etnos-product-grid {
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 30px 20px;
+
+    @include xl-max {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @include md-max {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include sm-max {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 15px;
+    }
+
+    h4 {
+      font-size: 22px;
+      line-height: 22px;
+      margin: 10px 0;
+      color: #000;
+    }
+
+    .single-product-box {
+      border: 1px solid $dusty-gray;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .product-thumb {
+      padding-bottom: 150%;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        inset: 0;
+        transition: transform 450ms;
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+
+  }
+}

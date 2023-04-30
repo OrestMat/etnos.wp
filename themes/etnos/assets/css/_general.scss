@@ -202,11 +202,9 @@ button {
   height: 50px;
   letter-spacing: 3px;
   font-weight: 500;
-  background: linear-gradient(
-    90deg,
-    rgba(34, 34, 34, 1) -10%,
-    rgba(108, 108, 108, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(34, 34, 34, 1) -10%,
+      rgba(108, 108, 108, 1) 100%);
   padding: 0 40px;
   display: inline-flex;
   align-items: center;
@@ -214,11 +212,9 @@ button {
   color: $white;
 
   &:hover {
-    background: linear-gradient(
-      90deg,
-      rgba(34, 34, 34, 1) 100%,
-      rgba(108, 108, 108, 1) 130%
-    );
+    background: linear-gradient(90deg,
+        rgba(34, 34, 34, 1) 100%,
+        rgba(108, 108, 108, 1) 130%);
   }
 }
 
@@ -295,4 +291,50 @@ iframe {
 
 .p-0 {
   padding: 0 !important;
+}
+
+
+.onsale {
+  position: absolute !important;
+  z-index: 1;
+  inset: auto auto 15px 15px !important;
+  background: linear-gradient(0deg, #ff6161 0, #ff7b7b 100%);
+  padding: 10px 15px !important;
+  color: #fff;
+  font-size: 18px !important;
+  border-radius: 0 !important;
+  min-height: auto !important;
+  line-height: 1.2 !important;
+  font-weight: 400 !important;
+}
+
+
+.price-box {
+  .price {
+    &>span {
+      bdi {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+
+    &>del {
+      opacity: 1 !important;
+      color: transparent !important;
+
+      bdi {
+        color: #ee1b21 !important;
+        margin-right: 5px;
+        font-weight: 600;
+      }
+    }
+
+    &>ins {
+      color: #000;
+      text-decoration: line-through;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
 }
