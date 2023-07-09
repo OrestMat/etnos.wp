@@ -15,6 +15,7 @@ require_once ABSPATH . 'wp-admin/includes/plugin.php';
 require_once ETNOS_T_PATH . '/include/config-acf.php';
 require_once ETNOS_T_PATH . '/include/config-actions.php';
 require_once ETNOS_T_PATH . '/include/woo-config.php';
+require_once ETNOS_T_PATH . '/include/optimization.php';
 
 
 if (!function_exists('etnos_setup')) :

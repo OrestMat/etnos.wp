@@ -5,11 +5,33 @@
 
 
 .etnos-main {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
-	&>main {
-		flex: 1;
-	}
+  &>main {
+    flex: 1;
+  }
+}
+
+.etnos-search-popup {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 999;
+
+  &__wrap {
+    padding-top: 30px;
+  }
+}
+
+.etnos-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, .5);
+  display: none;
+  z-index: 2;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
