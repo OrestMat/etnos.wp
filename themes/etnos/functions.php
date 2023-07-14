@@ -265,7 +265,7 @@ function get_cart_count()
 
 
 add_filter('woocommerce_cart_needs_shipping_address', '__return_false');
-
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 
 
 
