@@ -17,6 +17,7 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/959ce79a80.js" crossorigin="anonymous"></script>
   <?php wp_head(); ?>
 </head>
 

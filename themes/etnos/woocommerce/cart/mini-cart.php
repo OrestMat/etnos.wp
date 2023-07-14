@@ -57,6 +57,7 @@ do_action('woocommerce_before_mini_cart'); ?>
               <a href="<?php echo esc_url($product_permalink); ?>"> <?php echo esc_attr($product_name); ?></a>
               <p><span><?php echo apply_filters('woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf('%s &times; %s', $cart_item['quantity'], $product_price) . '</span>', $cart_item, $cart_item_key); ?></span></p>
             </div>
+
             <div class="cart_remove">
               <?php
               echo apply_filters('woocommerce_cart_item_remove_link', sprintf(
@@ -71,28 +72,30 @@ do_action('woocommerce_before_mini_cart'); ?>
               <?php echo wc_get_formatted_cart_item_data($cart_item); ?>
             </div>
           </div>
+
+          <div class="etnos-header-mini-cart_table">
+            <div class="cart_table_border">
+              <div class="cart_total">
+                <?php echo ('<span>Sub total:</span>'); ?> <span class="price"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
+              </div>
+              <div class="cart_total  mt-10">
+                <?php echo ('<span>Total:</span>'); ?> <span class="price"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
+              </div>
+            </div>
+          </div>
       <?php
         }
       }
       do_action('woocommerce_mini_cart_contents');
       ?>
     </div>
-    <div class="etnos-header-mini-cart_table">
-      <div class="cart_table_border">
-        <div class="cart_total">
-          <?php echo ('<span>Sub total:</span>'); ?> <span class="price"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
-        </div>
-        <div class="cart_total  mt-10">
-          <?php echo ('<span>Total:</span>'); ?> <span class="price"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
-        </div>
-      </div>
-    </div>
+
     <div class="etnos-header-mini-cart_footer">
       <div class="cart_button">
-        <a href="<?php echo get_permalink(wc_get_page_id('cart')); ?>"> <i class="icofont-cart"></i><?php _e('View cart', 'etnos'); ?></a>
+        <a class="btn" href="<?php echo get_permalink(wc_get_page_id('cart')); ?>"> <i class="fa-solid fa-cart-shopping"></i><?php _e('View cart', 'etnos'); ?></a>
       </div>
       <div class="cart_button">
-        <a href="<?php echo get_permalink(wc_get_page_id('checkout')); ?>"> <i class="icofont-close-line"></i> <?php _e('Checkout', 'etnos'); ?></a>
+        <a class="btn" href="<?php echo get_permalink(wc_get_page_id('checkout')); ?>"> <i class="fa-solid fa-xmark"></i> <?php _e('Checkout', 'etnos'); ?></a>
       </div>
     </div>
 

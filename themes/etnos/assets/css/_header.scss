@@ -1,8 +1,12 @@
-@import './vars';
-@import './mixin';
+@import "./vars";
+@import "./mixin";
 
 .etnos-header {
-  background: linear-gradient(90deg, rgba(238, 238, 238, 1) 30%, rgba(209, 208, 208, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 238, 238, 1) 30%,
+    rgba(209, 208, 208, 1) 100%
+  );
 
   &__top {
     background-color: $dark;
@@ -52,7 +56,7 @@
     }
 
     &-menu {
-      &>ul {
+      & > ul {
         display: flex;
         align-items: center;
         gap: 20px;
@@ -90,7 +94,6 @@
       }
 
       &-cart {
-
         &-count {
           position: absolute;
           top: -5px;
@@ -113,7 +116,7 @@
 
           &.active {
             .widget_shopping_cart_content {
-              animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+              animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
             }
           }
 
@@ -148,7 +151,8 @@
             right: 100%;
             z-index: 1;
             padding: 15px;
-            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+              rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
             opacity: 0;
             visibility: hidden;
 
@@ -156,15 +160,11 @@
               display: flex;
             }
 
-            .cart_img {
-              width: 40px;
-            }
-
             .variation {
               display: flex;
               flex-wrap: wrap;
 
-              &>dt {
+              & > dt {
                 flex: 0 0 50%;
               }
             }
