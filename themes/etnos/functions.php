@@ -15,7 +15,7 @@ require_once ABSPATH . 'wp-admin/includes/plugin.php';
 require_once ETNOS_T_PATH . '/include/config-acf.php';
 require_once ETNOS_T_PATH . '/include/config-actions.php';
 require_once ETNOS_T_PATH . '/include/woo-config.php';
-require_once ETNOS_T_PATH . '/include/optimization.php';
+// require_once ETNOS_T_PATH . '/include/optimization.php';
 
 
 if (!function_exists('etnos_setup')) :
@@ -262,3 +262,6 @@ function get_cart_count()
   echo json_encode(array('count' => $count));
   wp_die();
 }
+
+
+add_filter('woocommerce_cart_needs_shipping_address', '__return_false');
