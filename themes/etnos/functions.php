@@ -265,9 +265,8 @@ function get_cart_count()
 
 
 add_filter('woocommerce_cart_needs_shipping_address', '__return_false');
-remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 
-
+WC()->cart->remove_coupons();
 
 add_filter('woocommerce_currencies', 'add_my_currency');
 function add_my_currency($currencies)
