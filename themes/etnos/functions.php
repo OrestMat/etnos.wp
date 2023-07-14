@@ -267,29 +267,29 @@ function get_cart_count()
 add_filter('woocommerce_cart_needs_shipping_address', '__return_false');
 
 
-function disable_coupon_in_cart()
-{
-  global $woocommerce;
+// function disable_coupon_in_cart()
+// {
+//   global $woocommerce;
 
-  // Отримуємо доступ до корзини
-  $cart = $woocommerce->cart;
+//   // Отримуємо доступ до корзини
+//   $cart = $woocommerce->cart;
 
-  // Отримуємо список купонів в корзині
-  $applied_coupons = $cart->get_applied_coupons();
+//   // Отримуємо список купонів в корзині
+//   $applied_coupons = $cart->get_applied_coupons();
 
-  // Перевіряємо, чи є купони в корзині
-  if (count($applied_coupons) > 0) {
-    // Видаляємо всі купони з корзини
-    $cart->remove_coupons();
+//   // Перевіряємо, чи є купони в корзині
+//   if (count($applied_coupons) > 0) {
+//     // Видаляємо всі купони з корзини
+//     $cart->remove_coupons();
 
-    // Зберігаємо зміни в корзині
-    $cart->calculate_totals();
-    $cart->save();
-  }
-}
+//     // Зберігаємо зміни в корзині
+//     $cart->calculate_totals();
+//     $cart->save();
+//   }
+// }
 
-// Викликаємо функцію для відключення купону в корзині
-disable_coupon_in_cart();
+// // Викликаємо функцію для відключення купону в корзині
+// disable_coupon_in_cart();
 
 
 
