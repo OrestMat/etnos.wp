@@ -109,6 +109,77 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_64b1db97d03db": {
+                    "key": "layout_64b1db97d03db",
+                    "name": "banner-slider",
+                    "label": "Banner Slider",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64b1db97d03dc",
+                            "label": "Items",
+                            "name": "items",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_64b1db97d03dd",
+                                    "label": "Background",
+                                    "name": "background",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "full",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_64b1db97d03df",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_63d1bd5411c70": {
                     "key": "layout_63d1bd5411c70",
                     "name": "slider-products",
@@ -862,5 +933,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1682898390
+    "modified": 1689377756
 }
