@@ -267,7 +267,7 @@ function get_cart_count()
 add_filter('woocommerce_cart_needs_shipping_address', '__return_false');
 
 
-add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+
 
 add_filter('woocommerce_currencies', 'add_my_currency');
 function add_my_currency($currencies)
