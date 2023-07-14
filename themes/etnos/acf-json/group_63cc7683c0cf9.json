@@ -866,9 +866,9 @@
                         },
                         {
                             "key": "field_644efd3cf868f",
-                            "label": "Link Path",
-                            "name": "link_path",
-                            "type": "url",
+                            "label": "Button",
+                            "name": "button",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -877,27 +877,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_644efd45f8690",
-                            "label": "Llink Name",
-                            "name": "llink_name",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "return_format": "array"
                         }
                     ],
                     "min": "",
@@ -933,5 +913,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1689377756
+    "modified": 1689378546
 }

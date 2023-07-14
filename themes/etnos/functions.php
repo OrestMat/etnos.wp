@@ -236,14 +236,22 @@ if (!function_exists('etnos_mime_types')) {
 }
 
 
-function isLink($data)
-{
-  $el = $data;
 
-  echo $el['is_external'] ? ' target="_blank" ' : ' target="_self" ';
-  echo $el['nofollow'] ? ' rel="nofollow" ' : '';
-  echo $el['url'] ? ' href="' . esc_url($el['url']) . '" ' : '';
-  echo $el['custom_attributes'] ? ' ' . esc_attr($el['custom_attributes']) . ' ' : '';
+function isLink($arr, $class = false, $attr = false)
+{
+  if (!$arr) {
+    return false;
+  }
+
+  $href = $arr['url'] ? ' href="' . $arr['url']  . '" ' : '';
+  $name = $arr['title'];
+  $target = $arr['target'] ? ' target="_blank" rel="noopener" ' : '';
+  $class = $class ? ' class="' . $class . '" ' : '';
+  $attr = $attr ? $attr : '';
+
+  $result = '<a' . $class .  $href . $target . $attr . '>' .  $name . '</a>';
+
+  return $result;
 }
 
 
