@@ -347,3 +347,18 @@ iframe {
     }
   }
 }
+
+.media-fit {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  &>img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

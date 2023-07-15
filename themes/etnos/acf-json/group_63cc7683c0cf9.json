@@ -480,6 +480,57 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_64b1e07a3f4d4": {
+                    "key": "layout_64b1e07a3f4d4",
+                    "name": "products-list",
+                    "label": "Список Продуктів",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64b1e0873f4d7",
+                            "label": "Заголовок",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_64b1e07a3f4d6",
+                            "label": "Продукти",
+                            "name": "products",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 1,
+                            "return_format": "object",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_644ef036289b5": {
                     "key": "layout_644ef036289b5",
                     "name": "slider-instagram",
@@ -913,5 +964,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1689378546
+    "modified": 1689379019
 }
