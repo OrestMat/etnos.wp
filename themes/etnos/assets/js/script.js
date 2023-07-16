@@ -111,6 +111,7 @@
 
   function menuInit() {
     const header = $('#etnos-header');
+    let flag = true;
 
     if (header.length && header) {
       header.on('click', '.etnos-header__burger', function () {
@@ -124,6 +125,17 @@
 
     $(document).on('click', '.etnos-header__main-menu-close, .etnos-overlay', function () {
       $('.etnos-header__burger').trigger('click');
+    });
+
+    $(window).resize(function () {
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth > 992 && flag) {
+        const overlay = $('.etnos-overlay');
+        overlay.fadeOut();
+        header.removeClass('open');
+        flag = false;
+      }
     });
   }
 
