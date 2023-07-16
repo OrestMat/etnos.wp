@@ -117,8 +117,8 @@
         const btn = $(this);
         const overlay = $('.etnos-overlay');
 
-        overlay.fadeToggle();
-        header.toggleClass('open');
+        overlay.stop('true').fadeToggle();
+        header.stop('true').toggleClass('open');
       });
     }
 
