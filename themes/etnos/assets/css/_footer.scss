@@ -1,4 +1,5 @@
 @import './vars';
+@import './mixin';
 
 .etnos-footer {
   padding: 60px 0 40px;
@@ -28,8 +29,6 @@
   &>div {
     flex: 0 1 650px;
   }
-
-
 
   &__card {
     display: flex;
@@ -99,14 +98,19 @@
       gap: 30px;
 
       h2 {
-        font-size: 60px;
-        line-height: 110%;
         margin: 0 0 30px;
         font-weight: 900;
         letter-spacing: 0;
         font-style: italic;
         color: #000000;
         margin-bottom: 0;
+        font-size: 34px;
+        line-height: 40px;
+
+        @include md-max {
+          font-size: 30px;
+          line-height: 1.2em;
+        }
       }
 
       button {
