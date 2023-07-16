@@ -9,7 +9,7 @@ $logo = get_field('logo', 'option');
 <div class="etnos-overlay"></div>
 
 <div class="etnos-main">
-  <header class="etnos-header">
+  <header class="etnos-header" id="etnos-header">
     <div class="etnos-header__top">
       <div class="container">
         <div class="etnos-header__top-wrap">
@@ -30,8 +30,6 @@ $logo = get_field('logo', 'option');
             <img src="<?php echo esc_url($logo); ?>" title="<?php echo get_option('blogname'); ?>" alt="<?php echo get_option('blogname'); ?>">
           </a>
 
-
-
           <div class="etnos-header__main-menu">
             <?php
             if (has_nav_menu('primary-menu')) {
@@ -40,6 +38,8 @@ $logo = get_field('logo', 'option');
               wp_nav_menu($args);
             }
             ?>
+
+            <span class="etnos-header__main-menu-close"></span>
           </div>
 
           <div class="etnos-header__main-toolbar">
@@ -75,6 +75,11 @@ $logo = get_field('logo', 'option');
 
                 <?php endif; ?>
               </div>
+            </div>
+            <div class="etnos-header__burger">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
         </div>

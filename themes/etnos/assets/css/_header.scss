@@ -2,11 +2,76 @@
 @import "./mixin";
 
 .etnos-header {
-  background: linear-gradient(
-    90deg,
-    rgba(238, 238, 238, 1) 30%,
-    rgba(209, 208, 208, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(238, 238, 238, 1) 30%,
+      rgba(209, 208, 208, 1) 100%);
+
+  &.open {
+    .etnos-header__main-menu {
+      transform: translateX(0);
+    }
+
+    .etnos-header__burger {
+      span:nth-child(1) {
+        transform: rotate(45deg);
+        top: -2px;
+        left: 5px;
+      }
+
+      span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 100%;
+        left: 5px;
+      }
+    }
+  }
+
+  &__burger {
+    width: 25px;
+    height: 15px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    @include lg-min {
+      display: none;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: #222222;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+
+
+    & span:nth-child(1) {
+      top: 0px;
+      transform-origin: left center;
+    }
+
+    & span:nth-child(2) {
+      top: 50%;
+      transform-origin: left center;
+    }
+
+    & span:nth-child(3) {
+      top: 100%;
+      transform-origin: left center;
+    }
+  }
 
   &__top {
     background-color: $dark;
@@ -56,7 +121,66 @@
     }
 
     &-menu {
-      & > ul {
+      @include lg-max {
+        position: fixed;
+        inset: 0 auto 0 0;
+        background-color: #fff;
+        z-index: 999;
+        padding: 50px 30px 30px;
+        width: min(100%, 320px);
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform $trans;
+
+        .menu {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+      }
+
+      &-close {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+
+        @include lg-min {
+          display: none !important;
+        }
+
+        &:hover {
+
+          &::after,
+          &::before {
+            background-color: $red;
+          }
+        }
+
+        &::after,
+        &::before {
+          content: '';
+          height: 20px;
+          width: 2px;
+          background: #222222;
+          display: inline-block;
+          transition: background $trans;
+        }
+
+        &::after {
+          transform: rotate(45deg) translate(5px, -5px);
+        }
+
+        &::before {
+          transform: rotate(-45deg)translate(6px, 6px);
+        }
+      }
+
+      &>ul {
         display: flex;
         align-items: center;
         gap: 20px;
@@ -164,7 +288,7 @@
               display: flex;
               flex-wrap: wrap;
 
-              & > dt {
+              &>dt {
                 flex: 0 0 50%;
               }
             }

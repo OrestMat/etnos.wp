@@ -108,4 +108,24 @@
     mainOverlay();
     htmlOverflow();
   });
+
+  function menuInit() {
+    const header = $('#etnos-header');
+
+    if (header.length && header) {
+      header.on('click', '.etnos-header__burger', function () {
+        const btn = $(this);
+        const overlay = $('.etnos-overlay');
+
+        overlay.fadeToggle();
+        header.toggleClass('open');
+      });
+    }
+
+    $(document).on('click', '.etnos-header__main-menu-close, .etnos-overlay', function () {
+      $('.etnos-header__burger').trigger('click');
+    });
+  }
+
+  menuInit();
 })(jQuery, window, document);
