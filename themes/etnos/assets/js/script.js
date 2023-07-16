@@ -142,6 +142,13 @@
 
       main.stop('true').toggleClass('active');
     });
+
+    $(document).on('click', function (e) {
+      const target = $(e.target);
+      if (!target.closest('.etnos-header__main-toolbar-cart-main').length) {
+        $('.etnos-header__main-toolbar-cart').parent().removeClass('active');
+      }
+    });
   };
 
   cartPopup();

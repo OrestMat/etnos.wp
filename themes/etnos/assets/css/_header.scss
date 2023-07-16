@@ -292,9 +292,14 @@
             .variation {
               display: flex;
               flex-wrap: wrap;
+              gap: 0 10px;
 
               &>dt {
-                flex: 0 0 50%;
+                flex: 0 0 calc(40% - 5px);
+
+                &:nth-child(odd) {
+                  flex: 0 0 calc(60% - 5px);
+                }
               }
             }
           }

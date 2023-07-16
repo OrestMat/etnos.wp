@@ -54,40 +54,47 @@ do_action('woocommerce_before_mini_cart'); ?>
             </div>
 
             <div class="cart_info">
-              <a href="<?php echo esc_url($product_permalink); ?>"> <?php echo esc_attr($product_name); ?></a>
-              <p><span><?php echo apply_filters('woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf('%s &times; %s', $cart_item['quantity'], $product_price) . '</span>', $cart_item, $cart_item_key); ?></span></p>
-            </div>
+              <div>
+                <a href="<?php echo esc_url($product_permalink); ?>"> <?php echo esc_attr($product_name); ?></a>
+                <p><span><?php echo apply_filters('woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf('%s &times; %s', $cart_item['quantity'], $product_price) . '</span>', $cart_item, $cart_item_key); ?></span></p>
 
-            <div class="cart_remove">
-              <?php
-              echo apply_filters('woocommerce_cart_item_remove_link', sprintf(
-                '<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><i class="icofont-close-line"></i></a>',
-                esc_url(wc_get_cart_remove_url($cart_item_key)),
-                __('Remove this item', 'etnos'),
-                esc_attr($product_id),
-                esc_attr($cart_item_key),
-                esc_attr($_product->get_sku())
-              ), $cart_item_key);
-              ?>
-              <?php echo wc_get_formatted_cart_item_data($cart_item); ?>
-            </div>
-          </div>
 
-          <div class="etnos-header-mini-cart_table">
-            <div class="cart_table_border">
-              <div class="cart_total">
-                <?php echo ('<span>Sub total:</span>'); ?> <span class="price"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
-              </div>
-              <div class="cart_total  mt-10">
-                <?php echo ('<span>Total:</span>'); ?> <span class="price"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
+                <div class="cart_remove">
+                  <?php
+                  echo apply_filters('woocommerce_cart_item_remove_link', sprintf(
+                    '<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><i class="icofont-close-line"></i></a>',
+                    esc_url(wc_get_cart_remove_url($cart_item_key)),
+                    __('Remove this item', 'etnos'),
+                    esc_attr($product_id),
+                    esc_attr($cart_item_key),
+                    esc_attr($_product->get_sku())
+                  ), $cart_item_key);
+                  ?>
+                  <?php echo wc_get_formatted_cart_item_data($cart_item); ?>
+                </div>
               </div>
             </div>
+
+
           </div>
+
+
       <?php
         }
       }
       do_action('woocommerce_mini_cart_contents');
       ?>
+
+      <div class="etnos-header-mini-cart_table">
+        <div class="cart_table_border">
+          <!-- <div class="cart_total">
+            <?php echo ('<span>Sub total:</span>'); ?> <span class="price"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
+          </div> -->
+          <div class="cart_total  mt-10">
+            <?php echo ('<span>Ціна:</span>'); ?> <span class="price"><?php echo WC()->cart->get_cart_subtotal(); ?></span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="etnos-header-mini-cart_footer">
