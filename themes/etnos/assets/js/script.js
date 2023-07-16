@@ -94,12 +94,6 @@
     });
   });
 
-  $('.etnos-header__main-toolbar-cart-main').on('click', function (e) {
-    e.preventDefault();
-    const th = $(this);
-    th.toggleClass('active').stop('true');
-  });
-
   $('#etnos-header__main-search').click(function () {
     const th = $(this);
     const popup = $('.etnos-search-popup');
@@ -115,7 +109,6 @@
 
     if (header.length && header) {
       header.on('click', '.etnos-header__burger', function () {
-        const btn = $(this);
         const overlay = $('.etnos-overlay');
 
         overlay.stop('true').fadeToggle();
@@ -140,4 +133,16 @@
   }
 
   menuInit();
+
+  const cartPopup = () => {
+    $(document).on('click', '.etnos-header__main-toolbar-cart', function (e) {
+      e.preventDefault();
+      const btn = $(this);
+      const main = btn.parent();
+
+      main.stop('true').toggleClass('active');
+    });
+  };
+
+  cartPopup();
 })(jQuery, window, document);

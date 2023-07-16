@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
 
-  & > main {
+  &>main {
     flex: 1;
   }
 }
@@ -28,7 +28,7 @@
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  z-index: 2;
+  z-index: 998;
 }
 
 .no-scroll {
@@ -63,6 +63,7 @@
       a {
         text-transform: uppercase;
       }
+
       p {
         color: #7d7a7a;
       }
