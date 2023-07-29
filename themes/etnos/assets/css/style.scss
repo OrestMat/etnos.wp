@@ -126,6 +126,26 @@
     }
   }
 
+  .product-remove {
+    a {
+      margin: 0 auto;
+    }
+  }
+
+  .product-price,
+  .product-subtotal {
+    &>span {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .product-quantity {
+    .quantity {
+      justify-content: center;
+    }
+  }
+
   .cart_item {
     .product-remove {
       a {
