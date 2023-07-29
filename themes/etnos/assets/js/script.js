@@ -156,9 +156,46 @@
   $(document).on('click', '.etnos-qtybutton', function () {
     const btn = $(this);
     const btnUpdateCart = $('button[name="update_cart"');
+    const quantity = $('.etnos-quantity');
+    const quantityText = quantity.val();
 
-    console.log(1);
+    if (btn.text() == '-' && Number(quantityText) > 1) {
+      quantity.val(Number(quantityText) - 1);
+
+      updatePrice('-');
+    }
+
+    if (btn.text() == '+') {
+      quantity.val(Number(quantityText) + 1);
+
+      updatePrice('+');
+    }
 
     btnUpdateCart.removeAttr('disabled');
   });
+
+  const updatePrice = function (flag) {
+    const price = $('#product-price bdi');
+    const priceText = parseFloat(price.text().replace(/\$/g, ''));
+
+    const total = $('#product-subtotal bdi');
+    const totalText = parseFloat(total.text().replace(/\$/g, ''));
+
+    const mark = $('.woocommerce-Price-currencySymbol').clone().eq(0);
+
+    console.log(totalText);
+
+    if (flag == '+') {
+      console.log(1);
+      const newTotal = (totalText + priceText).toFixed(2);
+      total.text(newTotal);
+      total.append(mark);
+    }
+
+    if (flag == '-') {
+      const newTotal = (totalText - priceText).toFixed(2);
+      total.text(newTotal);
+      total.append(mark);
+    }
+  };
 })(jQuery, window, document);
