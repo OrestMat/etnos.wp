@@ -28,12 +28,14 @@ do_action('woocommerce_before_cart'); ?>
       <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
         <thead>
           <tr>
-            <th class="product-remove"><span class="screen-reader-text"><?php esc_html_e('Remove item', 'woocommerce'); ?></span></th>
-            <th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e('Thumbnail image', 'woocommerce'); ?></span></th>
-            <th class="product-name"><?php esc_html_e('Product', 'woocommerce'); ?></th>
-            <th class="product-price"><?php esc_html_e('Price', 'woocommerce'); ?></th>
-            <th class="product-quantity"><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
-            <th class="product-subtotal"><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
+            <!-- <th class="product-remove"><span class="screen-reader-text"><?php esc_html_e('Remove item', 'woocommerce'); ?></span></th>
+            <th class="product-thumbnail">
+              <span class="screen-reader-text"><?php esc_html_e('Thumbnail image', 'woocommerce'); ?></span>
+            </th> -->
+            <th colspan="3" class="product-name"><?php esc_html_e('Товар', 'woocommerce'); ?></th>
+            <th class="product-price"><?php esc_html_e('Ціна', 'woocommerce'); ?></th>
+            <th class="product-quantity"><?php esc_html_e('Кількість', 'woocommerce'); ?></th>
+            <th class="product-subtotal"><?php esc_html_e('Проміжна сума', 'woocommerce'); ?></th>
           </tr>
         </thead>
         <tbody>
@@ -145,14 +147,14 @@ do_action('woocommerce_before_cart'); ?>
           <tr>
             <td colspan="6" class="actions">
 
-              <?php if (wc_coupons_enabled()) { ?>
+              <!-- <?php if (wc_coupons_enabled()) { ?>
                 <div class="coupon">
                   <label for="coupon_code" class="screen-reader-text"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" /> <button type="submit" class="button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_attr_e('Apply coupon', 'woocommerce'); ?></button>
                   <?php do_action('woocommerce_cart_coupon'); ?>
                 </div>
-              <?php } ?>
+              <?php } ?> -->
 
-              <button type="submit" class="button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+              <button type="submit" class="button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Оновити корзину', 'woocommerce'); ?></button>
 
               <?php do_action('woocommerce_cart_actions'); ?>
 

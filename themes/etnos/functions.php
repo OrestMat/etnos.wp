@@ -294,3 +294,12 @@ function add_my_currency_symbol($currency_symbol, $currency)
   }
   return $currency_symbol;
 }
+
+
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
+function my_enqueue_scripts()
+{
+
+  // Передача ajaxurl у ваш .js файл
+  wp_localize_script('custom-scripts', 'my_ajax_object', array('ajaxurl' => admin_url('admin-ajax.php')));
+}

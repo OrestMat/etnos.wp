@@ -1,5 +1,5 @@
 (function ($, window, document, undefined) {
-  'use strict';
+  ('use strict');
 
   const mainOverlay = function () {
     const overlay = $('.etnos-overlay');
@@ -152,4 +152,13 @@
   };
 
   cartPopup();
+
+  $(document).on('click', '.etnos-qtybutton', function () {
+    const btn = $(this);
+    const btnUpdateCart = $('button[name="update_cart"');
+
+    console.log(1);
+
+    btnUpdateCart.removeAttr('disabled');
+  });
 })(jQuery, window, document);
