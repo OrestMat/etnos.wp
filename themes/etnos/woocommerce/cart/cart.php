@@ -35,7 +35,7 @@ do_action('woocommerce_before_cart'); ?>
             <th colspan="3" class="product-name"><?php esc_html_e('Товар', 'woocommerce'); ?></th>
             <th class="product-price"><?php esc_html_e('Ціна', 'woocommerce'); ?></th>
             <th class="product-quantity"><?php esc_html_e('Кількість', 'woocommerce'); ?></th>
-            <th class="product-subtotal"><?php esc_html_e('Проміжна сума', 'woocommerce'); ?></th>
+            <th class="product-subtotal"><?php esc_html_e('Проміжний підсумок', 'woocommerce'); ?></th>
           </tr>
         </thead>
         <tbody>
