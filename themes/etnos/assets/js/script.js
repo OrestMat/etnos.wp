@@ -153,7 +153,7 @@
 
   cartPopup();
 
-  $('.cart_item').on('click', '.etnos-qtybutton', function (e) {
+  $(document).on('click', '.etnos-qtybutton', function (e) {
     const btn = $(this);
     const parent = btn.closest('.cart_item');
     const btnUpdateCart = $('button[name="update_cart"');
