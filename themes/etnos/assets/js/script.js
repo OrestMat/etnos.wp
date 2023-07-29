@@ -153,40 +153,42 @@
 
   cartPopup();
 
-  $(document).on('click', '.etnos-qtybutton', function () {
+  $('.cart_item').on('click', '.etnos-qtybutton', function (e) {
     const btn = $(this);
+    const parent = btn.closest('.cart_item');
     const btnUpdateCart = $('button[name="update_cart"');
-    const quantity = $('.etnos-quantity');
+    const quantity = parent.find('.etnos-quantity');
     const quantityText = quantity.val();
 
     if (btn.text() == '-' && Number(quantityText) > 1) {
       quantity.val(Number(quantityText) - 1);
 
-      updatePrice('-');
+      updatePrice('-', btn);
     }
 
     if (btn.text() == '+') {
       quantity.val(Number(quantityText) + 1);
 
-      updatePrice('+');
+      updatePrice('+', btn);
     }
 
     btnUpdateCart.removeAttr('disabled');
   });
 
-  const updatePrice = function (flag) {
-    const price = $('#product-price bdi');
+  const updatePrice = function (flag, el) {
+    const parent = el.closest('.cart_item');
+
+    const price = parent.find('#product-price bdi');
     const priceText = parseFloat(price.text().replace(/\$/g, ''));
 
-    const total = $('#product-subtotal bdi');
+    const total = parent.find('#product-subtotal bdi');
     const totalText = parseFloat(total.text().replace(/\$/g, ''));
+
+    console.log(total);
 
     const mark = $('.woocommerce-Price-currencySymbol').clone().eq(0);
 
-    console.log(totalText);
-
     if (flag == '+') {
-      console.log(1);
       const newTotal = (totalText + priceText).toFixed(2);
       total.text(newTotal);
       total.append(mark);
