@@ -184,8 +184,6 @@
     const total = parent.find('#product-subtotal bdi');
     const totalText = parseFloat(total.text().replace(/\$/g, ''));
 
-    console.log(total);
-
     const mark = $('.woocommerce-Price-currencySymbol').clone().eq(0);
 
     if (flag == '+') {
